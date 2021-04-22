@@ -1,0 +1,60 @@
+h1,
+h2 {
+  font-family: "Rozha One", serif;
+}
+
+h5 {
+  text-transform: uppercase;
+}
+
+h5,
+span,
+a {
+  font-weight: 300;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  background: #EAEAE9;
+}
+
+.navbar {
+  background-color: #EAEAE9;
+  padding: 0;
+  margin: 1em 0 1em 0;
+}
+
+.navbar .logo {
+  width: 7em;
+}
+
+footer a {
+  color: #4F4F4F;
+}
+
+footer a:hover {
+  color: #8FB5CC;
+  text-decoration: none;
+}
+
+footer .logo {
+  width: 8.5em;
+  padding-bottom: 0.5em;
+}
+
+footer .footer__bottom span {
+  margin: 0.5em;
+}
+
+footer .footer__bottom__social-media {
+  text-align: right;
+}
+
+footer .footer__bottom__social-media i {
+  font-size: 2em;
+  margin-left: 1em;
+}
+/*# sourceMappingURL=style.css.map */

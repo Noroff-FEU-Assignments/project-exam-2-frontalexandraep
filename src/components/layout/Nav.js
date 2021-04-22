@@ -1,0 +1,32 @@
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import { NavLink } from "react-router-dom";
+import logo from "../../images/logo.svg";
+
+//import Button from "react-bootstrap/Button";
+//import { useContext } from "react";
+//import AuthContext from "../../context/AuthContext";
+
+export default function Navigation() {
+  return (
+    <Navbar expand="lg" sticky="top">
+      <NavLink to="/" exact>
+        <Navbar.Brand><img className="logo" src={logo} alt="Logo" /></Navbar.Brand>
+      </NavLink>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="ml-auto">
+          <NavLink to="/" exact className="nav-link">
+            accommodations
+          </NavLink>
+          <NavLink to="/contact" className="nav-link">
+            contact
+          </NavLink>
+          <NavLink to="/admin" className="nav-link">
+            admin
+          </NavLink>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+}

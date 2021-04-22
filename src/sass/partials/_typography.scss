@@ -1,0 +1,18 @@
+h1,
+h2 {
+  font-family: $font-primary;
+}
+
+h5 {
+  text-transform: uppercase;
+}
+
+h5,
+span,
+a {
+  font-weight: 300;
+}
+
+body {
+  font-family: $font-secondary;
+}
