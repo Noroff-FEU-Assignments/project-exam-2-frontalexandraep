@@ -17,12 +17,36 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+html,
 body {
-  background: #EAEAE9;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #eaeae9;
+}
+
+#root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+.wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
 }
 
 .navbar {
-  background-color: #EAEAE9;
+  background-color: #eaeae9;
   padding: 0;
   margin: 1em 0 1em 0;
 }
@@ -31,30 +55,79 @@ body {
   width: 7em;
 }
 
-footer a {
-  color: #4F4F4F;
+.footer {
+  border-top: 1px solid #66646349;
 }
 
-footer a:hover {
-  color: #8FB5CC;
-  text-decoration: none;
+.footer__row {
+  padding: 2em 0 1.5em 0;
 }
 
-footer .logo {
-  width: 8.5em;
+.footer .logo {
   padding-bottom: 0.5em;
 }
 
-footer .footer__bottom span {
+.footer a {
+  color: #4f4f4f;
+}
+
+.footer a:hover {
+  color: #8fb5cc;
+  text-decoration: none;
+}
+
+.footer .footer__bottom {
+  border-top: 1px solid #66646349;
+  padding: 1.2em 0 1.2em;
+}
+
+.footer .footer__bottom__dots {
   margin: 0.5em;
 }
 
-footer .footer__bottom__social-media {
-  text-align: right;
-}
-
-footer .footer__bottom__social-media i {
+.footer .footer__bottom__social-media i {
   font-size: 2em;
   margin-left: 1em;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 580px) {
+  .logo {
+    width: 7.5em;
+  }
+  .footer {
+    text-align: center;
+  }
+  .footer__bottom__social-media {
+    margin-top: 1em;
+  }
+  .footer__bottom__social-media i {
+    font-size: 1.8em;
+  }
+}
+
+@media only screen and (min-width: 580px) and (max-width: 980px) {
+  .logo {
+    width: 8em;
+  }
+  .footer__bottom__terms,
+  .footer__bottom__social-media {
+    margin-bottom: 1em;
+  }
+  .footer__bottom__social-media i {
+    font-size: 1.8em;
+  }
+}
+
+@media only screen and (min-width: 981px) {
+  .logo {
+    width: 8.5em;
+  }
+  .footer__bottom__social-media {
+    text-align: right;
+  }
+  .footer__bottom__social-media i {
+    font-size: 2em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

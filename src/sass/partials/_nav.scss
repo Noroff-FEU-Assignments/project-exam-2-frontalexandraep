@@ -1,9 +1,62 @@
 .navbar {
-    background-color: $colour-background;
-    padding: 0;
-    margin: 1em 0 1em 0;
+  background-color: $colour-background;
+  padding: 0;
+  margin: 1em 0 1em 0;
 
-    .logo {
-        width: 7em;
+  &__logo {
+    width: 7em;
+  }
+
+  .navbar-nav .nav-link {
+    color: $colour-ui-primary;
+    font-weight: 300;
+    font-size: 1.1em;
+
+    &.active {
+      font-weight: 400;
+      color: $colour-ui-primary;
     }
+  }
+
+  .navbar-toggler {
+      background: $colour-ui-shadow;
+  }
+}
+
+/* Media Queries */
+@media only screen and (max-width: $mobile-width) {
+  .navbar {
+    .nav-link {
+      margin: 0.7em 0 0.7em 0;
+
+      &:hover {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+  .navbar {
+    .nav-link {
+      margin: 1em 0 1em 0;
+
+      &:hover {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .navbar {
+    .nav-link {
+      margin-left: 1.5em;
+      padding-bottom: 0.4em;
+
+      &:hover {
+        border-bottom: 1px solid $colour-border;
+      }
+    }
+  }
 }

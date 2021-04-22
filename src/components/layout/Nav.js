@@ -11,12 +11,12 @@ export default function Navigation() {
   return (
     <Navbar expand="lg" sticky="top">
       <NavLink to="/" exact>
-        <Navbar.Brand><img className="logo" src={logo} alt="Logo" /></Navbar.Brand>
+        <Navbar.Brand><img className="navbar__logo" src={logo} alt="Logo" /></Navbar.Brand>
       </NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <NavLink to="/" exact className="nav-link">
+          <NavLink to="/accommodations" className="nav-link">
             accommodations
           </NavLink>
           <NavLink to="/contact" className="nav-link">

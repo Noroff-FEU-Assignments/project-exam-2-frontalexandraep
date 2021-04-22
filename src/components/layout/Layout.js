@@ -9,13 +9,15 @@ export default function Layout() {
   return (
     <AuthProvider>
       <Router>
-        <Container>
-          <Nav />
-          <Switch>
-            <Route path="/" exact component={Home} />
-          </Switch>
-          <Footer />
-        </Container>
+        <div className="wrapper">
+          <Container>
+            <Nav />
+            <Switch>
+              <Route path="/" exact component={Home} />
+            </Switch>
+          </Container>
+        </div>
+        <Footer />
       </Router>
     </AuthProvider>
   );

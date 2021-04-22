@@ -1,4 +1,13 @@
-footer {
+.footer {
+  border-top: 1px solid $colour-border;
+
+  &__row {
+    padding: 2em 0 1.5em 0;
+  }
+
+  .logo {
+    padding-bottom: 0.5em;
+  }
 
   a {
     color: $colour-text;
@@ -9,11 +18,10 @@ footer {
     }
   }
 
-  .logo {
-    padding-bottom: 0.5em;
-  }
-
   .footer__bottom {
+    border-top: 1px solid $colour-border;
+    padding: 1.2em 0 1.2em;
+
     &__dots {
       margin: 0.5em;
     }
@@ -27,14 +35,14 @@ footer {
 
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {
-  .logo {
-    width: 7.5em;
-  }
-
-  footer {
+  .footer {
     text-align: center;
 
-    .footer__bottom__social-media {
+    .logo {
+      width: 7.5em;
+    }
+
+    &__bottom__social-media {
       margin-top: 1em;
 
       i {
@@ -63,6 +71,7 @@ footer {
   .logo {
     width: 8.5em;
   }
+
   .footer__bottom__social-media {
     text-align: right;
 
