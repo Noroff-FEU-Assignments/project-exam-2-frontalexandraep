@@ -8,5 +8,5 @@ export default function Heading({ size = "1", content }) {
 
 Heading.propTypes = {
   size: PropTypes.string,
-  content: PropTypes.string.isRequired,
+  content: PropTypes.any.isRequired,
 };
