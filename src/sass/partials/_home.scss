@@ -1,0 +1,66 @@
+/* Hero Banner */
+.hero-banner {
+  background-image: url(../../images/hero.jpg);
+  height: 75vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h2 {
+      color: $colour-white;
+      width: 17em;
+      text-align: center;
+    }
+  }
+}
+
+/* Search bar */
+.search-bar {
+  font-size: 14px;
+
+  input {
+    display: block;
+    margin: 0 auto;
+    padding: 0.8em;
+    width: 80%;
+    border-radius: 3px;
+    background: #ffffffd8;
+    border: none;
+    outline: none;
+  }
+
+  &__results {
+    z-index: 99;
+
+    &__list {
+      position: absolute;
+      width: 80%;
+      list-style: none;
+      padding: 0.2em 0.2em 0 0.2em;
+      margin: 0;
+      position: absolute;
+      top: 12.5vh;
+      left: 5.1vh;
+
+      &--item {
+          background: #ffffff;
+          padding: 0.5em;
+          border-radius: 3px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          img {
+              width: 10em;
+          }
+      }
+    }
+  }
+}

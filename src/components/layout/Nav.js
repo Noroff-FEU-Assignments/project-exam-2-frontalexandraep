@@ -3,7 +3,6 @@ import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
 import logo from "../../images/logo.svg";
 
-//import Button from "react-bootstrap/Button";
 //import { useContext } from "react";
 //import AuthContext from "../../context/AuthContext";
 

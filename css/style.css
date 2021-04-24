@@ -1,6 +1,8 @@
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Rozha One", serif;
+  text-transform: lowercase;
 }
 
 h5 {
@@ -8,18 +10,22 @@ h5 {
 }
 
 h5,
-span,
-a {
+span {
   font-weight: 300;
 }
 
 body {
   font-family: "Work Sans", sans-serif;
+  color: #393939;
 }
 
 html,
 body {
   height: 100%;
+}
+
+.container {
+  min-width: 85%;
 }
 
 body {
@@ -51,8 +57,51 @@ body {
   margin: 1em 0 1em 0;
 }
 
-.navbar .logo {
+.navbar__logo {
   width: 7em;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #303030;
+  font-weight: 300;
+  font-size: 1.1em;
+}
+
+.navbar .navbar-nav .nav-link.active {
+  font-weight: 400;
+  color: #303030;
+}
+
+.navbar .navbar-toggler {
+  background: #3030308a;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 580px) {
+  .navbar .nav-link {
+    margin: 0.7em 0 0.7em 0;
+  }
+  .navbar .nav-link:hover {
+    font-weight: 400;
+  }
+}
+
+@media only screen and (min-width: 580px) and (max-width: 980px) {
+  .navbar .nav-link {
+    margin: 1em 0 1em 0;
+  }
+  .navbar .nav-link:hover {
+    font-weight: 400;
+  }
+}
+
+@media only screen and (min-width: 981px) {
+  .navbar .nav-link {
+    margin-left: 1.5em;
+  }
+  .navbar .nav-link:hover {
+    border-bottom: 1px solid #66646349;
+  }
 }
 
 .footer {
@@ -68,7 +117,7 @@ body {
 }
 
 .footer a {
-  color: #4f4f4f;
+  color: #393939;
 }
 
 .footer a:hover {
@@ -92,11 +141,11 @@ body {
 
 /* Media Queries */
 @media only screen and (max-width: 580px) {
-  .logo {
-    width: 7.5em;
-  }
   .footer {
     text-align: center;
+  }
+  .footer .logo {
+    width: 7.5em;
   }
   .footer__bottom__social-media {
     margin-top: 1em;
@@ -129,5 +178,52 @@ body {
   .footer__bottom__social-media i {
     font-size: 2em;
   }
+}
+
+/* Hero Banner */
+.hero-banner {
+  background-image: url(../../images/hero.jpg);
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-banner__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.hero-banner__content h2 {
+  color: #ffffff;
+  width: 17em;
+  text-align: center;
+}
+
+/* Search bar */
+.search-bar {
+  font-size: 14px;
+}
+
+.search-bar input {
+  display: block;
+  margin: 0 auto;
+  padding: 0.8em;
+  width: 80%;
+  border-radius: 3px;
+  background: #ffffffd8;
+  border: none;
+  outline: none;
+}
+
+.search-bar__results__list {
+  position: absolute;
+  width: 80%;
+  list-style: none;
+  padding: 0.2em 0.2em 0 0.2em;
+  margin: 0;
 }
 /*# sourceMappingURL=style.css.map */

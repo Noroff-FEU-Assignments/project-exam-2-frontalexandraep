@@ -1,5 +1,6 @@
 .footer {
   border-top: 1px solid $colour-border;
+  z-index: -1;
 
   &__row {
     padding: 2em 0 1.5em 0;

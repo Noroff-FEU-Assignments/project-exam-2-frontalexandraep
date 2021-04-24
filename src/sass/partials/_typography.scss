@@ -1,6 +1,8 @@
 h1,
-h2 {
+h2,
+h3 {
   font-family: $font-primary;
+  text-transform: lowercase; 
 }
 
 h5 {
@@ -14,4 +16,5 @@ span {
 
 body {
   font-family: $font-secondary;
+  color: $colour-text;
 }
