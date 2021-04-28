@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { BASE_URL } from "../../constants/api";
 import Loader from "../common/Loader";
 import Heading from "../common/Heading";
+import Enquiry from "./Enquiry";
 
 export default function Details() {
+  // modal for booking enquiry
+  const [showEnquiryModal, setShowModal] = useState(false);
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
+  // fetch establishment
   const [establishment, setEstablishment] = useState(null);
   const [fetchEstablishment, setFetchEstablishment] = useState(true);
   const [fetchError, setFetchError] = useState(null);
@@ -19,7 +26,7 @@ export default function Details() {
     async function getEstablishment() {
       try {
         const response = await axios.get(url);
-        console.log("reponse", response);
+        console.log("response", response);
         setEstablishment(response.data);
       } catch (error) {
         console.log(error);
@@ -64,15 +71,23 @@ export default function Details() {
           <img src={establishment.image[0].url} alt={establishment.name} />
         </div>
         <div className="details__card__desc">
-          <Heading size="3" content={establishment.price} />
+          <h3>{establishment.price} NOK</h3>
           <ul className="details__card__desc--special-features">
-            <li></li>
+            {establishment.bar && <li>Bar</li>}
+            {establishment.breakfast_included && <li>Breakfast Included</li>}
+            {establishment.restaurant && <li>Restaurant</li>}
+            {establishment.pet_friendly && <li>Pet-friendly</li>}
+            {establishment.parking_available && <li>Parking Available</li>}
+            {establishment.guesthouse && <li>Guesthouse</li>}
+            {establishment.hotel && <li>Hotel</li>}
+            {establishment.bed_and_breakfast && <li>Bed & Breakfast</li>}
           </ul>
           <p>{establishment.description}</p>
-          <Link to={`enquiry/${id}`} className="details__card__desc__btn">
-          Book Now
-        </Link>
+          {
+            <button onClick={handleShowModal} className="details__card__desc__btn">Book Now</button>
+          }
         </div>
+        <Enquiry show={showEnquiryModal} onHide={handleCloseModal} id={id} />
       </div>
     </main>
   );

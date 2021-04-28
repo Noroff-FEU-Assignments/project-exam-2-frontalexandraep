@@ -1,6 +1,6 @@
 import Heading from "../common/Heading";
 import AccommodationsList from "./AccommodationsList";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 export default function Accommodations() {
   return (

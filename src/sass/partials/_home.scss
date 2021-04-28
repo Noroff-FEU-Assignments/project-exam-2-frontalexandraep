@@ -1,12 +1,11 @@
 /* Hero Banner */
 .hero-banner {
   background-image: url(../../images/hero.jpg);
-  height: 75vh;
+  height: 85vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  border-radius: 3px;
 
   &__content {
     position: absolute;
@@ -183,19 +182,19 @@
 @media only screen and (min-width: $desktop-width) {
   .hero-banner__content h2,
   .home__button {
-    font-size: 1.85em;
+    font-size: 1.8em;
   }
 
   .hero-banner__content {
-    width: 40vh;
+    width: 25em;
 
     .search-bar {
       input {
-        width: 40vh;
+        width: 25em;
       }
 
       &__results__list {
-        width: 40vh;
+        width: 25em;
 
         &--item {
           img {

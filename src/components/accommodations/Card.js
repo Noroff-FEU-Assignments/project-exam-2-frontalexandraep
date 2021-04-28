@@ -1,43 +1,21 @@
-//import PropTypes from "prop-types";
-//import { useState } from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Heading from "../common/Heading";
 
-export default function AccommodationCard({
+export default function Card({
   id,
   name,
   image,
-  price
-  /*bar,
+  price,
+  bar,
   breakfast_included,
   restaurant,
   pet_friendly,
   parking_available,
   guesthouse,
   hotel,
-  bed_and_breakfast,*/
+  bed_and_breakfast,
 }) {
-    
-  //const [features, setFeatures] = useState([]);
-
-  /*const specialFeatures =
-    bar &&
-    breakfast_included &&
-    restaurant &&
-    pet_friendly &&
-    parking_available &&
-    guesthouse &&
-    hotel &&
-    bed_and_breakfast;
-
-  if (specialFeatures === true) {
-    return <p>hello</p>;
-  }*/
-
-  /*if (specialFeatures === true) {
-    setFeatures.toString();
-  }*/
-
   return (
     <div className="card" key={id}>
       <div className="card__img">
@@ -45,9 +23,24 @@ export default function AccommodationCard({
       </div>
       <div className="card__desc">
         <Heading size="1" content={name} />
-        <Heading size="2" content={price} />
+        <h2>{price} NOK</h2>
         <ul className="card__desc__special-features">
-          <li></li>
+          {bar && <li>Bar</li>}
+          {breakfast_included && <li>Breakfast Included</li>}
+          {restaurant && <li>Restaurant</li>}
+          {pet_friendly && <li>Pet-friendly</li>}
+          {parking_available && <li>Parking Available</li>}
+          {guesthouse && (
+            <li className="card__desc__special-features--type">Guesthouse</li>
+          )}
+          {hotel && (
+            <li className="card__desc__special-features--type">Hotel</li>
+          )}
+          {bed_and_breakfast && (
+            <li className="card__desc__special-features--type">
+              Bed & Breakfast
+            </li>
+          )}
         </ul>
         <Link to={`/accommodations/${id}`} className="card__desc__btn">
           Details
@@ -57,8 +50,8 @@ export default function AccommodationCard({
   );
 }
 
-/*AccommodationCard.propTypes = {
-  id: PropTypes.any.isRequired,
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   bar: PropTypes.any,
@@ -69,4 +62,4 @@ export default function AccommodationCard({
   guesthouse: PropTypes.any,
   hotel: PropTypes.any,
   bed_and_breakfast: PropTypes.any,
-};*/
+};

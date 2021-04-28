@@ -3,7 +3,7 @@ import axios from "axios";
 import Row from "react-bootstrap/Row";
 import { BASE_URL } from "../../constants/api";
 import Loader from "../common/Loader";
-import AccommodationCard from "./Card";
+import Card from "./Card";
 
 export default function AccommodationsList() {
   const [accommodations, setAccommodations] = useState([]);
@@ -59,7 +59,7 @@ export default function AccommodationsList() {
           } = accommodation;
 
           return (
-            <AccommodationCard
+            <Card
               key={id}
               id={id}
               name={name}

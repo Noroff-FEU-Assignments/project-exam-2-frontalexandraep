@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-//import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BASE_URL } from "../../../constants/api";
 
 export default function SearchBar() {
@@ -43,8 +43,8 @@ export default function SearchBar() {
         <ul className="search-bar__results__list">
           {establishmentMatch.map((estab) => (
             <li className="search-bar__results__list--item" key={estab.id}>
-              {estab.name}
-              <img src={estab.image[0].url} alt={estab.name} />              {/*<Link to={`/accommodations/${estab.id}`}>${estab.name}</Link>*/}
+              <Link to={`accommodations/${estab.id}`}>{estab.name}</Link>
+              <img src={estab.image[0].url} alt={estab.name} />
             </li>
           ))}
         </ul>
