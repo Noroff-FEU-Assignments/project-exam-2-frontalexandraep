@@ -9,6 +9,7 @@ import Home from "../home/Home.js";
 import Accommodations from "../accommodations/Accommodations";
 import Details from "../accommodations/Details";
 import Confirmation from "../accommodations/enquiry/Confirmation";
+import Contact from "../contact/Contact";
 
 export default function Layout() {
   return (
@@ -27,6 +28,7 @@ export default function Layout() {
                 />
                 <Route path="/accommodations/:id" exact component={Details} />
                 <Route path="/confirmation" component={Confirmation} />
+                <Route path="/contact" component={Contact} />
               </Switch>
             </Container>
           </div>

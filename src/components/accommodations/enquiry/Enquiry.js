@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useHistory, useParams } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
-import Alert from "react-bootstrap/Alert";
 import Form from "react-bootstrap/Form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -27,16 +26,16 @@ const schema = yup.object().shape({
     .email("Please enter a valid email address"),
   check_in: yup.string().required("Please provide a check-in date"),
   check_out: yup.string().required("Please provide a check-out date"),
-  establishment_name: yup.number().required(),
+  establishment_name: yup.string().required(),
 });
 
 export default function Enquiry(props) {
-  const [submitting, setSubmitting] = useState(false);
-  const url = BASE_URL + "enquiries/";
-
   const [establishment, setEstablishment] = useState({});
   let { id } = useParams();
   const estabUrl = BASE_URL + `establishments/${id}`;
+
+  const [submitting, setSubmitting] = useState(false);
+  const url = BASE_URL + "enquiries/";
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
@@ -75,81 +74,68 @@ export default function Enquiry(props) {
   }
 
   return (
-    <>
-      <Modal animation={false} show={props.show} onHide={props.onHide}>
-        <Modal.Header closeButton>
-          <Heading
-            size="1"
-            content="Book your stay at"
-            title={establishment.name}
-          />
-        </Modal.Header>
+    <Modal animation={false} show={props.show} onHide={props.onHide}>
+      <Modal.Header closeButton>
         <Heading
-          size="2"
-          content="Fill out the form to complete your booking"
+          size="1"
+          content="Book your stay at"
+          title={establishment.name}
         />
-        {submitting && (
-          <Alert variant="success">
-            Your booking was successful. You will receive a booking confirmation
-            within 24 hours. Thank you for choosing us!
-          </Alert>
-        )}
-        <Form className="enquiry-form" onSubmit={handleSubmit(onSubmit)}>
-          <Form.Group>
-            <Form.Label>Full name</Form.Label>
-            <Form.Control
-              name="full_name"
-              placeholder="Full name"
-              ref={register}
-            />
-            {errors.full_name && (
-              <FormError>{errors.full_name.message}</FormError>
-            )}
-          </Form.Group>
+      </Modal.Header>
+      <Heading size="2" content="Fill out the form to complete your booking" />
+      <Form className="enquiry-form" onSubmit={handleSubmit(onSubmit)}>
+        <Form.Group>
+          <Form.Label>Full name</Form.Label>
+          <Form.Control
+            name="full_name"
+            placeholder="Full name"
+            ref={register}
+          />
+          {errors.full_name && (
+            <FormError>{errors.full_name.message}</FormError>
+          )}
+        </Form.Group>
 
-          <Form.Group>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
-              name="email_address"
-              placeholder="Email address"
-              ref={register}
-            />
-            {errors.email_address && (
-              <FormError>{errors.email_address.message}</FormError>
-            )}
-          </Form.Group>
+        <Form.Group>
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
+            name="email_address"
+            placeholder="Email address"
+            ref={register}
+          />
+          {errors.email_address && (
+            <FormError>{errors.email_address.message}</FormError>
+          )}
+        </Form.Group>
 
-          <Form.Group>
-            <Form.Label>Check-in</Form.Label>
-            <Form.Control name="check_in" type="date" ref={register} />
-            {errors.check_in && (
-              <FormError>{errors.check_in.message}</FormError>
-            )}
-          </Form.Group>
+        <Form.Group>
+          <Form.Label>Check-in</Form.Label>
+          <Form.Control name="check_in" type="date" ref={register} />
+          {errors.check_in && <FormError>{errors.check_in.message}</FormError>}
+        </Form.Group>
 
-          <Form.Group>
-            <Form.Label>Check-out</Form.Label>
-            <Form.Control name="check_out" type="date" ref={register} />
-            {errors.check_out && (
-              <FormError>{errors.check_out.message}</FormError>
-            )}
-          </Form.Group>
+        <Form.Group>
+          <Form.Label>Check-out</Form.Label>
+          <Form.Control name="check_out" type="date" ref={register} />
+          {errors.check_out && (
+            <FormError>{errors.check_out.message}</FormError>
+          )}
+        </Form.Group>
 
-          <Form.Group hidden>
-            <Form.Label>Establishment Name</Form.Label>
-            <Form.Control
-              name="establishment_name"
-              value={establishment.name}
-              ref={register}
-            />
-          </Form.Group>
-
-          <button type="submit">Submit</button>
-        </Form>
-        <Modal.Footer>
-          <Link to={`/accommodations`}>Return to all accommodations</Link>
-        </Modal.Footer>
-      </Modal>
-    </>
+        <Form.Group hidden>
+          <Form.Label>Establishment Name</Form.Label>
+          <Form.Control
+            readOnly
+            name="establishment_name"
+            value={establishment.name}
+            ref={register}
+          />
+        </Form.Group>
+        <button type="submit">{submitting ? "Submitting..." : "Submit"}</button>
+      </Form>
+      <Modal.Footer>
+        <Link to={`/accommodations`}>Return to all accommodations</Link>
+      </Modal.Footer>
+    </Modal>
   );
 }
