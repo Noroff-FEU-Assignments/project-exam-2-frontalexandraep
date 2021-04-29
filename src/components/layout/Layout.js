@@ -8,6 +8,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "../home/Home.js";
 import Accommodations from "../accommodations/Accommodations";
 import Details from "../accommodations/Details";
+import Confirmation from "../accommodations/enquiry/Confirmation";
 
 export default function Layout() {
   return (
@@ -25,6 +26,7 @@ export default function Layout() {
                   component={Accommodations}
                 />
                 <Route path="/accommodations/:id" exact component={Details} />
+                <Route path="/confirmation" component={Confirmation} />
               </Switch>
             </Container>
           </div>

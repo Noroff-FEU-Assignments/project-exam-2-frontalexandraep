@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { BASE_URL } from "../../constants/api";
 import Loader from "../common/Loader";
 import Heading from "../common/Heading";
-import Enquiry from "./Enquiry";
+import Enquiry from "./enquiry/Enquiry";
 
 export default function Details() {
   // modal for booking enquiry
@@ -87,7 +87,7 @@ export default function Details() {
             <button onClick={handleShowModal} className="details__card__desc__btn">Book Now</button>
           }
         </div>
-        <Enquiry show={showEnquiryModal} onHide={handleCloseModal} id={id} />
+        <Enquiry show={showEnquiryModal} onHide={handleCloseModal} establishmentId={id} />
       </div>
     </main>
   );

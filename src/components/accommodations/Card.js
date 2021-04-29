@@ -23,7 +23,7 @@ export default function Card({
       </div>
       <div className="card__desc">
         <Heading size="1" content={name} />
-        <h2>{price} NOK</h2>
+        <Heading size="2" content={price} title="NOK" />
         <ul className="card__desc__special-features">
           {bar && <li>Bar</li>}
           {breakfast_included && <li>Breakfast Included</li>}
