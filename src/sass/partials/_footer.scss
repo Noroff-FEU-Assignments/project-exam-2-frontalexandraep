@@ -3,7 +3,9 @@
   z-index: -1;
 
   &__row {
-    padding: 2em 0 1.5em 0;
+    padding: 2em 5em 1.5em 5em;
+    justify-content: center;
+
   }
 
   .logo {
@@ -21,7 +23,16 @@
 
   .footer__bottom {
     border-top: 1px solid $colour-border;
-    padding: 1.2em 0 1.2em;
+    padding: 1.2em 0;
+
+    &__row {
+      margin: 0 5em;
+      padding: 0;
+    }
+
+    &__terms, &__social-media {
+      padding: 0
+    }
 
     &__dots {
       margin: 0.5em;

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import Container from "react-bootstrap/Container";
 import { BASE_URL } from "../../constants/api";
 import Loader from "../common/Loader";
 import Heading from "../common/Heading";
@@ -50,7 +51,7 @@ export default function Details() {
     );
 
   return (
-    <main className="details">
+    <>
       <Helmet>
         <title>{establishment.name} | Holidaze</title>
       </Helmet>
@@ -61,34 +62,45 @@ export default function Details() {
           className="details__banner__heading"
         />
       </div>
-      <a href="/accommodations">
-        <i className="fas fa-chevron-left"></i>
-        Return
-      </a>
-      <Heading size="2" content={establishment.name} />
-      <div className="details__card">
-        <div className="details__card__img">
-          <img src={establishment.image[0].url} alt={establishment.name} />
+      <Container className="details">
+        <a href="/accommodations">
+          <i className="fas fa-chevron-left"></i>
+          Return
+        </a>
+        <Heading size="2" content={establishment.name} />
+        <div className="details__card">
+          <div className="details__card__img">
+            <img src={establishment.image[0].url} alt={establishment.name} />
+          </div>
+          <div className="details__card__desc">
+            <h3>{establishment.price} NOK</h3>
+            <ul className="details__card__desc--special-features">
+              {establishment.bar && <li>Bar</li>}
+              {establishment.breakfast_included && <li>Breakfast Included</li>}
+              {establishment.restaurant && <li>Restaurant</li>}
+              {establishment.pet_friendly && <li>Pet-friendly</li>}
+              {establishment.parking_available && <li>Parking Available</li>}
+              {establishment.guesthouse && <li>Guesthouse</li>}
+              {establishment.hotel && <li>Hotel</li>}
+              {establishment.bed_and_breakfast && <li>Bed & Breakfast</li>}
+            </ul>
+            <p>{establishment.description}</p>
+            {
+              <button
+                onClick={handleShowModal}
+                className="details__card__desc__btn"
+              >
+                Book Now
+              </button>
+            }
+          </div>
+          <Enquiry
+            show={showEnquiryModal}
+            onHide={handleCloseModal}
+            establishmentId={id}
+          />
         </div>
-        <div className="details__card__desc">
-          <h3>{establishment.price} NOK</h3>
-          <ul className="details__card__desc--special-features">
-            {establishment.bar && <li>Bar</li>}
-            {establishment.breakfast_included && <li>Breakfast Included</li>}
-            {establishment.restaurant && <li>Restaurant</li>}
-            {establishment.pet_friendly && <li>Pet-friendly</li>}
-            {establishment.parking_available && <li>Parking Available</li>}
-            {establishment.guesthouse && <li>Guesthouse</li>}
-            {establishment.hotel && <li>Hotel</li>}
-            {establishment.bed_and_breakfast && <li>Bed & Breakfast</li>}
-          </ul>
-          <p>{establishment.description}</p>
-          {
-            <button onClick={handleShowModal} className="details__card__desc__btn">Book Now</button>
-          }
-        </div>
-        <Enquiry show={showEnquiryModal} onHide={handleCloseModal} establishmentId={id} />
-      </div>
-    </main>
+      </Container>
+    </>
   );
 }

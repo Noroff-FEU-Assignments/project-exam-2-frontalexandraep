@@ -1,7 +1,6 @@
 import Nav from "./Nav";
 import Footer from "./Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Container from "react-bootstrap/Container";
 import { AuthProvider } from "../../context/AuthContext";
 import { HelmetProvider } from "react-helmet-async";
 
@@ -17,20 +16,14 @@ export default function Layout() {
       <HelmetProvider>
         <Router>
           <div className="wrapper">
-            <Container>
-              <Nav />
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route
-                  path="/accommodations/"
-                  exact
-                  component={Accommodations}
-                />
-                <Route path="/accommodations/:id" exact component={Details} />
-                <Route path="/confirmation" component={Confirmation} />
-                <Route path="/contact" component={Contact} />
-              </Switch>
-            </Container>
+            <Nav />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/accommodations/" exact component={Accommodations} />
+              <Route path="/accommodations/:id" exact component={Details} />
+              <Route path="/confirmation" component={Confirmation} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
           </div>
           <Footer />
         </Router>

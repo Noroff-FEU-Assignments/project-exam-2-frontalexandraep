@@ -1,6 +1,7 @@
+import Container from "react-bootstrap/Container";
+import { Helmet } from "react-helmet-async";
 import Heading from "../common/Heading";
 import AccommodationsList from "./AccommodationsList";
-import { Helmet } from "react-helmet-async";
 
 export default function Accommodations() {
   return (
@@ -9,13 +10,13 @@ export default function Accommodations() {
         <title>Accommodations | Holidaze</title>
       </Helmet>
       <div className="hero-banner__accommodations">
-        <div className="hero-banner__accommodations--content">
+        <div className="hero-banner__accommodations__content">
           <Heading size="2" content="Accommodations" />
         </div>
       </div>
-      <main className="accommodations">
+      <Container className="accommodations">
         <AccommodationsList />
-      </main>
+      </Container>
     </>
   );
 }

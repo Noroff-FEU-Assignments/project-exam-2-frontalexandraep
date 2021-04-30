@@ -1,3 +1,4 @@
+import Container from "react-bootstrap/Container";
 import Heading from "../common/Heading";
 import SearchBar from "./search/SearchBar";
 import Images from "./content/Images";
@@ -14,7 +15,7 @@ export default function Home() {
           <SearchBar />
         </div>
       </div>
-      <main className="home">
+      <Container className="home">
         <div className="home__text">
           <Heading size="1" content="Welcome to Bergen" />
           <Heading size="2" content="The gateway to the fjords of Norway" />
@@ -28,7 +29,7 @@ export default function Home() {
           View all accommodations
           <i className="fas fa-chevron-right home__button__icon"></i>
         </a>
-      </main>
+      </Container>
     </>
   );
 }
