@@ -1,0 +1,53 @@
+/* Banner */
+.banner__details {
+  background-image: url(../../images/accommodations.jpg);
+  height: 18vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $colour-white;
+    text-align: center;
+  }
+}
+
+/* Details */
+.details {
+  margin: 5em auto 8em auto;
+
+  h2 {
+    padding-bottom: 0.5em;
+  }
+
+  &__return-link {
+    display: block;
+    color: $colour-text;
+    padding-bottom: 1.5em;
+
+    .icon {
+      padding-right: 1em;
+    }
+
+    &:hover {
+      color: $colour-text;
+    }
+  }
+
+  &__card {
+    display: flex;
+
+    &__img {
+      flex: 1;
+    }
+
+    &__desc {
+      flex: 1;
+    }
+  }
+}

@@ -62,11 +62,11 @@ export default function ContactForm() {
       console.log("response", response.data);
       reset(DEFAULT_VALUES);
       setAuth(response.data);
+      setSubmitted(true);
     } catch (error) {
       console.log("error", error);
     } finally {
       setSending(false);
-      setSubmitted(true);
     }
   }
 

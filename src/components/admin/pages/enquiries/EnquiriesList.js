@@ -65,7 +65,7 @@ export default function EnquiriesList() {
               created_at={created_at}
             />
           );
-        })}
+        }).reverse()}
       </Row>
     </div>
   );

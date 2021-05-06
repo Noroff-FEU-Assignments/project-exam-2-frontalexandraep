@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import FormError from "../../../common/FormError";
 import useAxios from "../../../../hooks/useAxios";
+import ImgUpload from "./ImgUpload";
 
 const schema = yup.object().shape({
   hotel: yup.boolean(),
@@ -27,7 +27,6 @@ export default function AddEstab() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
 
-  const history = useHistory();
   const http = useAxios();
 
   const { register, handleSubmit } = useForm({
@@ -41,13 +40,12 @@ export default function AddEstab() {
     try {
       const response = await http.post("establishments", data);
       console.log("response", response.data);
-      history.push("/admin");
+      setSubmitted(true);
     } catch (error) {
       console.log("error", error);
       setError(error.toString());
     } finally {
       setAdding(false);
-      setSubmitted(true);
     }
   }
 
@@ -58,9 +56,10 @@ export default function AddEstab() {
       )}
       {error && <FormError>{error}</FormError>}
       <Form className="add-form" onSubmit={handleSubmit(onSubmit)}>
+      {/*<Form.File name="file" onChange={this.handleChange} label="Add image" custom />*/}
 
         <Form.Group>
-        <Form.Label>Establishment type</Form.Label>
+          <Form.Label>Establishment type</Form.Label>
           <Form.Check
             type="checkbox"
             label="Hotel"
@@ -82,7 +81,7 @@ export default function AddEstab() {
         </Form.Group>
 
         <Form.Group>
-        <Form.Label>Special features</Form.Label>
+          <Form.Label>Special features</Form.Label>
           <Form.Check
             type="checkbox"
             label="Parking Available"
@@ -107,16 +106,11 @@ export default function AddEstab() {
             name="pet_friendly"
             ref={register}
           />
-          <Form.Check
-            type="checkbox"
-            label="Bar"
-            name="bar"
-            ref={register}
-          />
-        </Form.Group> 
+          <Form.Check type="checkbox" label="Bar" name="bar" ref={register} />
+        </Form.Group>
 
         <Form.Group>
-        <Form.Label>Establishment title</Form.Label>
+          <Form.Label>Establishment title</Form.Label>
           <Form.Control
             name="name"
             placeholder="Establishment title.."
@@ -125,23 +119,19 @@ export default function AddEstab() {
         </Form.Group>
 
         <Form.Group>
-        <Form.Label>Price per night</Form.Label>
-          <Form.Control
-            name="price"
-            placeholder="Price.."
-            ref={register}
-          />
+          <Form.Label>Price per night</Form.Label>
+          <Form.Control name="price" placeholder="Price.." ref={register} />
         </Form.Group>
 
         <Form.Group>
-        <Form.Label>Description</Form.Label>
+          <Form.Label>Description</Form.Label>
           <Form.Control
             name="description"
             placeholder="Description.."
             ref={register}
           />
         </Form.Group>
-        
+
         <button>{adding ? "Adding..." : "Add new establishment"}</button>
       </Form>
     </>

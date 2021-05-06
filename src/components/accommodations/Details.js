@@ -55,16 +55,15 @@ export default function Details() {
       <Helmet>
         <title>{establishment.name} | Holidaze</title>
       </Helmet>
-      <div className="details__banner">
+      <div className="banner__details">
         <Heading
           size="1"
           content={establishment.name}
-          className="details__banner__heading"
         />
       </div>
       <Container className="details">
-        <a href="/accommodations">
-          <i className="fas fa-chevron-left"></i>
+        <a className="details__return-link" href="/accommodations">
+          <i className="fas fa-chevron-left icon"></i>
           Return
         </a>
         <Heading size="2" content={establishment.name} />
