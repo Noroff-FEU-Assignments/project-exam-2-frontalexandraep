@@ -17,8 +17,6 @@ export default function SearchBar() {
     loadEstablishments();
   }, [url]);
 
-  console.log(establishments);
-
   const searchEstablishments = (text) => {
     if (!text) {
       setEstablishmentMatch([]);

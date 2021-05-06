@@ -46,10 +46,18 @@
       &--item {
         background: #ffffffd8;
         padding: 0.5em;
-        border-radius: 3px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        a {
+          color: $colour-text;
+
+          &:hover {
+            text-decoration: none;
+            font-style: italic;
+          }
+        }
       }
     }
   }

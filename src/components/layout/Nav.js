@@ -21,7 +21,7 @@ export default function Navigation() {
           <NavLink to="/contact" className="nav-link">
             contact
           </NavLink>
-          <NavLink to="/admin" className="nav-link">
+          <NavLink to="/login" className="nav-link">
             admin
           </NavLink>
         </Nav>

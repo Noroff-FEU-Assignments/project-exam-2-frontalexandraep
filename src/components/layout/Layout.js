@@ -9,6 +9,11 @@ import Accommodations from "../accommodations/Accommodations";
 import Details from "../accommodations/Details";
 import Confirmation from "../accommodations/enquiry/Confirmation";
 import Contact from "../contact/Contact";
+import Login from "../login/Login";
+import Admin from "../admin/Admin";
+import Enquiries from "../admin/pages/enquiries/Enquiries";
+import Entries from "../admin/pages/entries/Entries";
+import AddPage from "../admin/pages/addEstablishment/AddPage";
 
 export default function Layout() {
   return (
@@ -23,6 +28,11 @@ export default function Layout() {
               <Route path="/accommodations/:id" exact component={Details} />
               <Route path="/confirmation" component={Confirmation} />
               <Route path="/contact" component={Contact} />
+              <Route path="/login" component={Login} />
+              <Route path="/admin" exact component={Admin} />
+              <Route path="/admin/enquiries" component={Enquiries} />
+              <Route path="/admin/entries" component={Entries} />
+              <Route path="/admin/add-establishment" component={AddPage} />
             </Switch>
           </div>
           <Footer />

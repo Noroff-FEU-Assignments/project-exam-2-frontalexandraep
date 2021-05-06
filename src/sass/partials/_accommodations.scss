@@ -1,0 +1,21 @@
+/* Banner */
+.banner__accommodations {
+    background-image: url(../../images/accommodations.jpg);
+    height: 60vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  
+    &__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  
+      h2 {
+        color: $colour-white;
+      }
+    }
+  }
+  

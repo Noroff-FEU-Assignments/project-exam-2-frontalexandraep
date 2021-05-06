@@ -9,8 +9,8 @@ export default function Accommodations() {
       <Helmet>
         <title>Accommodations | Holidaze</title>
       </Helmet>
-      <div className="hero-banner__accommodations">
-        <div className="hero-banner__accommodations__content">
+      <div className="banner__accommodations">
+        <div className="banner__accommodations__content">
           <Heading size="2" content="Accommodations" />
         </div>
       </div>
