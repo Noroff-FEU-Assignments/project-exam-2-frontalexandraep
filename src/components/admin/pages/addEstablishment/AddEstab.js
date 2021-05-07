@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import FormError from "../../../common/FormError";
 import useAxios from "../../../../hooks/useAxios";
-import ImgUpload from "./ImgUpload";
 
 const schema = yup.object().shape({
   hotel: yup.boolean(),
@@ -36,9 +35,14 @@ export default function AddEstab() {
   async function onSubmit(data) {
     setAdding(true);
     setError(null);
+
+    const formData = new FormData();
+    formData.append("files.image", data.files[0]);
+    data.status = "publish";
     console.log(data);
+
     try {
-      const response = await http.post("establishments", data);
+      const response = await http.post("establishments", formData);
       console.log("response", response.data);
       setSubmitted(true);
     } catch (error) {
@@ -56,8 +60,9 @@ export default function AddEstab() {
       )}
       {error && <FormError>{error}</FormError>}
       <Form className="add-form" onSubmit={handleSubmit(onSubmit)}>
-      {/*<Form.File name="file" onChange={this.handleChange} label="Add image" custom />*/}
-
+        <Form.Group>
+          <Form.File name="files" label="Add image" {...register("files")} />
+        </Form.Group>
         <Form.Group>
           <Form.Label>Establishment type</Form.Label>
           <Form.Check
