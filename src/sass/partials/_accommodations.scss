@@ -1,21 +1,91 @@
 /* Banner */
 .banner__accommodations {
-    background-image: url(../../images/accommodations.jpg);
-    height: 60vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  
-    &__content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-  
-      h2 {
-        color: $colour-white;
+  background-image: url(../../images/accommodations.jpg);
+  height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h2 {
+      color: $colour-white;
+    }
+  }
+}
+
+.accommodations__results {
+  margin: 6em auto;
+
+  .card {
+    margin-bottom: 5em;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: none;
+    border: none;
+
+    h1, h2 {
+      font-family: $font-secondary;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    &__img-container {
+      flex: 1;
+
+      &__img {
+        object-fit: cover;
+        height: 30vh;
+        width: 100%;
+        border-radius: 2px;
+      }
+    }
+
+    &__desc {
+      flex: 1;
+      margin: 0 3em;
+
+      &__special-features {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1em 0 1.5em 0;
+        border-bottom: 1px solid $colour-border;
+
+        &__item {
+          background: $colour-ui-shadow-sec;
+          padding: 0.5em 0.5em;
+          margin-top: 0.5em;
+          border-radius: 2px;
+          margin-right: 0.5em;
+        }
+      }
+
+      &__btn {
+        background: $colour-accent;
+        text-transform: uppercase;
+        font-size: 1.1em;
+        color: $colour-text;
+        display: block;
+        margin-top: 2em;
+        padding: 0.8em 0;
+        text-align: center;
+        border-radius: 2px;
+        width: 100%;
+
+        &:hover {
+          text-decoration: none;
+          background: $colour-ui-hover;
+          transition: background 0.4s ease-in-out;
+        }
       }
     }
   }
-  
+}

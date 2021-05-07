@@ -18,26 +18,38 @@ export default function Card({
 }) {
   return (
     <div className="card" key={id}>
-      <div className="card__img">
-        <img src={image} alt={name} />
+      <div className="card__img-container">
+        <img className="card__img-container__img" src={image} alt={name} />
       </div>
       <div className="card__desc">
         <Heading size="1" content={name} />
         <Heading size="2" content={price} title="NOK" />
         <ul className="card__desc__special-features">
-          {bar && <li>Bar</li>}
-          {breakfast_included && <li>Breakfast Included</li>}
-          {restaurant && <li>Restaurant</li>}
-          {pet_friendly && <li>Pet-friendly</li>}
-          {parking_available && <li>Parking Available</li>}
+          {bar && <li className="card__desc__special-features__item">Bar</li>}
+          {breakfast_included && (
+            <li className="card__desc__special-features__item">
+              Breakfast Included
+            </li>
+          )}
+          {restaurant && (
+            <li className="card__desc__special-features__item">Restaurant</li>
+          )}
+          {pet_friendly && (
+            <li className="card__desc__special-features__item">Pet-friendly</li>
+          )}
+          {parking_available && (
+            <li className="card__desc__special-features__item">
+              Parking Available
+            </li>
+          )}
           {guesthouse && (
-            <li className="card__desc__special-features--type">Guesthouse</li>
+            <li className="card__desc__special-features__item">Guesthouse</li>
           )}
           {hotel && (
-            <li className="card__desc__special-features--type">Hotel</li>
+            <li className="card__desc__special-features__item">Hotel</li>
           )}
           {bed_and_breakfast && (
-            <li className="card__desc__special-features--type">
+            <li className="card__desc__special-features__item">
               Bed & Breakfast
             </li>
           )}
