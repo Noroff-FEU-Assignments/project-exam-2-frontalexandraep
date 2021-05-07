@@ -37,9 +37,24 @@ export default function AddEstab() {
     setError(null);
 
     const formData = new FormData();
+    formData.append(
+      "data",
+      JSON.stringify({
+        hotel: data.hotel,
+        bed_and_breakfast: data.bed_and_breakfast,
+        guesthouse: data.guesthouse,
+        parking_available: data.parking_available,
+        breakfast_included: data.breakfast_included,
+        restaurant: data.restaurant,
+        pet_friendly: data.pet_friendly,
+        bar: data.bar,
+        name: data.name,
+        price: data.price,
+        description: data.description,
+      })
+    );
     formData.append("files.image", data.files[0]);
     data.status = "publish";
-    console.log(data);
 
     try {
       const response = await http.post("establishments", formData);
@@ -61,7 +76,7 @@ export default function AddEstab() {
       {error && <FormError>{error}</FormError>}
       <Form className="add-form" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group>
-          <Form.File name="files" label="Add image" {...register("files")} />
+          <Form.File name="files" label="Add image" ref={register} />
         </Form.Group>
         <Form.Group>
           <Form.Label>Establishment type</Form.Label>
