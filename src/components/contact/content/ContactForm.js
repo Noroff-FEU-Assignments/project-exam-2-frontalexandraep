@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,7 +6,6 @@ import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert";
 import FormError from "../../common/FormError";
-import AuthContext from "../../../context/AuthContext";
 import { BASE_URL } from "../../../constants/api";
 import {
   MINIMUM_NAME_CHARACTERS,
@@ -52,8 +51,6 @@ export default function ContactForm() {
     resolver: yupResolver(schema),
   });
 
-  const [, setAuth] = useContext(AuthContext);
-
   async function onSubmit(data) {
     setSending(true);
 
@@ -61,7 +58,6 @@ export default function ContactForm() {
       const response = await axios.post(url, data);
       console.log("response", response.data);
       reset(DEFAULT_VALUES);
-      setAuth(response.data);
       setSubmitted(true);
     } catch (error) {
       console.log("error", error);

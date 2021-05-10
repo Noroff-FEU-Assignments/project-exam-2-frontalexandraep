@@ -56,10 +56,7 @@ export default function Details() {
         <title>{establishment.name} | Holidaze</title>
       </Helmet>
       <div className="banner__details">
-        <Heading
-          size="1"
-          content={establishment.name}
-        />
+        <Heading size="1" content={establishment.name} />
       </div>
       <Container className="details">
         <a className="details__return-link" href="/accommodations">
@@ -68,22 +65,45 @@ export default function Details() {
         </a>
         <Heading size="2" content={establishment.name} />
         <div className="details__card">
-          <div className="details__card__img">
-            <img src={establishment.image[0].url} alt={establishment.name} />
+          <div className="details__card__img-container">
+            <img
+              className="details__card__img-container__img"
+              src={establishment.image[0].url}
+              alt={establishment.name}
+            />
           </div>
           <div className="details__card__desc">
             <h3>{establishment.price} NOK</h3>
-            <ul className="details__card__desc--special-features">
-              {establishment.bar && <li>Bar</li>}
-              {establishment.breakfast_included && <li>Breakfast Included</li>}
-              {establishment.restaurant && <li>Restaurant</li>}
-              {establishment.pet_friendly && <li>Pet-friendly</li>}
-              {establishment.parking_available && <li>Parking Available</li>}
-              {establishment.guesthouse && <li>Guesthouse</li>}
-              {establishment.hotel && <li>Hotel</li>}
-              {establishment.bed_and_breakfast && <li>Bed & Breakfast</li>}
+            <ul className="details__card__desc__special-features">
+              {establishment.bar && (
+                <li className="details__card__desc__special-features__item">
+                  Bar
+                </li>
+              )}
+              {establishment.breakfast_included && (
+                <li className="details__card__desc__special-features__item">
+                  Breakfast Included
+                </li>
+              )}
+              {establishment.restaurant && (
+                <li className="details__card__desc__special-features__item">
+                  Restaurant
+                </li>
+              )}
+              {establishment.pet_friendly && (
+                <li className="details__card__desc__special-features__item">
+                  Pet-friendly
+                </li>
+              )}
+              {establishment.parking_available && (
+                <li className="details__card__desc__special-features__item">
+                  Parking Available
+                </li>
+              )}
             </ul>
-            <p>{establishment.description}</p>
+            <p className="details__card__desc__text">
+              {establishment.description}
+            </p>
             {
               <button
                 onClick={handleShowModal}

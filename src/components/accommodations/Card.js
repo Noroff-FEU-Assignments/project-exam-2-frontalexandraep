@@ -12,9 +12,6 @@ export default function Card({
   restaurant,
   pet_friendly,
   parking_available,
-  guesthouse,
-  hotel,
-  bed_and_breakfast,
 }) {
   return (
     <div className="card" key={id}>
@@ -40,17 +37,6 @@ export default function Card({
           {parking_available && (
             <li className="card__desc__special-features__item">
               Parking Available
-            </li>
-          )}
-          {guesthouse && (
-            <li className="card__desc__special-features__item">Guesthouse</li>
-          )}
-          {hotel && (
-            <li className="card__desc__special-features__item">Hotel</li>
-          )}
-          {bed_and_breakfast && (
-            <li className="card__desc__special-features__item">
-              Bed & Breakfast
             </li>
           )}
         </ul>

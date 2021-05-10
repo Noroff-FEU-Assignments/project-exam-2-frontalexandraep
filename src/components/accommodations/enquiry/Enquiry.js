@@ -1,12 +1,12 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useHistory, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Alert from "react-bootstrap/Alert";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import axios from "axios";
-import AuthContext from "../../../context/AuthContext";
 import Heading from "../../common/Heading";
 import FormError from "../../common/FormError";
 import { BASE_URL } from "../../../constants/api";
@@ -35,13 +35,12 @@ export default function Enquiry(props) {
   const estabUrl = BASE_URL + `establishments/${id}`;
 
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const url = BASE_URL + "enquiries/";
 
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(schema),
   });
-  const history = useHistory();
-  const [, setAuth] = useContext(AuthContext);
 
   useEffect(function () {
     async function getEstab() {
@@ -64,8 +63,7 @@ export default function Enquiry(props) {
     try {
       const response = await axios.post(url, data);
       console.log("response", response.data);
-      setAuth(response.data);
-      history.push("/confirmation");
+      setSubmitted(true);
     } catch (error) {
       console.log("error", error);
     } finally {
@@ -74,68 +72,83 @@ export default function Enquiry(props) {
   }
 
   return (
-    <Modal animation={false} show={props.show} onHide={props.onHide}>
-      <Modal.Header closeButton>
+    <>
+      <Modal animation={false} show={props.show} onHide={props.onHide}>
+        <Modal.Header closeButton>
+          <Heading
+            size="1"
+            content="Book your stay at"
+            title={establishment.name}
+          />
+        </Modal.Header>
         <Heading
-          size="1"
-          content="Book your stay at"
-          title={establishment.name}
+          size="2"
+          content="Fill out the form to complete your booking"
         />
-      </Modal.Header>
-      <Heading size="2" content="Fill out the form to complete your booking" />
-      <Form className="enquiry-form" onSubmit={handleSubmit(onSubmit)}>
-        <Form.Group>
-          <Form.Label>Full name</Form.Label>
-          <Form.Control
-            name="full_name"
-            placeholder="Full name"
-            ref={register}
-          />
-          {errors.full_name && (
-            <FormError>{errors.full_name.message}</FormError>
+        <Form className="enquiry-form" onSubmit={handleSubmit(onSubmit)}>
+          <Form.Group>
+            <Form.Label>Full name</Form.Label>
+            <Form.Control
+              name="full_name"
+              placeholder="Full name"
+              ref={register}
+            />
+            {errors.full_name && (
+              <FormError>{errors.full_name.message}</FormError>
+            )}
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Email address</Form.Label>
+            <Form.Control
+              name="email_address"
+              placeholder="Email address"
+              ref={register}
+            />
+            {errors.email_address && (
+              <FormError>{errors.email_address.message}</FormError>
+            )}
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Check-in</Form.Label>
+            <Form.Control name="check_in" type="date" ref={register} />
+            {errors.check_in && (
+              <FormError>{errors.check_in.message}</FormError>
+            )}
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Check-out</Form.Label>
+            <Form.Control name="check_out" type="date" ref={register} />
+            {errors.check_out && (
+              <FormError>{errors.check_out.message}</FormError>
+            )}
+          </Form.Group>
+
+          <Form.Group hidden>
+            <Form.Label>Establishment Name</Form.Label>
+            <Form.Control
+              readOnly
+              name="establishment_name"
+              value={establishment.name}
+              ref={register}
+            />
+          </Form.Group>
+          {submitted && (
+            <Alert variant="success">
+              Thank you for choosing us! Your booking was successful. You will
+              receive a booking confirmation with all details within 24 hours.
+            </Alert>
           )}
-        </Form.Group>
-
-        <Form.Group>
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            name="email_address"
-            placeholder="Email address"
-            ref={register}
-          />
-          {errors.email_address && (
-            <FormError>{errors.email_address.message}</FormError>
-          )}
-        </Form.Group>
-
-        <Form.Group>
-          <Form.Label>Check-in</Form.Label>
-          <Form.Control name="check_in" type="date" ref={register} />
-          {errors.check_in && <FormError>{errors.check_in.message}</FormError>}
-        </Form.Group>
-
-        <Form.Group>
-          <Form.Label>Check-out</Form.Label>
-          <Form.Control name="check_out" type="date" ref={register} />
-          {errors.check_out && (
-            <FormError>{errors.check_out.message}</FormError>
-          )}
-        </Form.Group>
-
-        <Form.Group hidden>
-          <Form.Label>Establishment Name</Form.Label>
-          <Form.Control
-            readOnly
-            name="establishment_name"
-            value={establishment.name}
-            ref={register}
-          />
-        </Form.Group>
-        <button type="submit">{submitting ? "Submitting..." : "Submit"}</button>
-      </Form>
-      <Modal.Footer>
-        <Link to={`/accommodations`}>Return to all accommodations</Link>
-      </Modal.Footer>
-    </Modal>
+          <button type="submit">
+            {submitting ? "Submitting..." : "Submit"}
+          </button>
+        </Form>
+        <Modal.Footer>
+          <Link to={`/accommodations`}>Return to all accommodations</Link>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }

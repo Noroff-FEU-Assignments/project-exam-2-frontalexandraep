@@ -1,7 +1,6 @@
 /* Banner */
 .banner__accommodations {
   background-image: url(../../images/accommodations.jpg);
-  height: 60vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -20,18 +19,16 @@
 }
 
 .accommodations__results {
-  margin: 6em auto;
-
   .card {
     margin-bottom: 5em;
     align-items: center;
     display: flex;
-    flex-direction: row;
     width: 100%;
     background: none;
     border: none;
 
-    h1, h2 {
+    h1,
+    h2 {
       font-family: $font-secondary;
       text-transform: uppercase;
       font-weight: 300;
@@ -42,29 +39,24 @@
 
       &__img {
         object-fit: cover;
-        height: 30vh;
-        width: 100%;
         border-radius: 2px;
       }
     }
 
     &__desc {
       flex: 1;
-      margin: 0 3em;
 
       &__special-features {
         list-style: none;
         display: flex;
         flex-wrap: wrap;
-        padding: 1em 0 1.5em 0;
         border-bottom: 1px solid $colour-border;
 
         &__item {
           background: $colour-ui-shadow-sec;
           padding: 0.5em 0.5em;
-          margin-top: 0.5em;
+          margin: 0.5em 0.8em 0 0;
           border-radius: 2px;
-          margin-right: 0.5em;
         }
       }
 
@@ -74,8 +66,6 @@
         font-size: 1.1em;
         color: $colour-text;
         display: block;
-        margin-top: 2em;
-        padding: 0.8em 0;
         text-align: center;
         border-radius: 2px;
         width: 100%;
@@ -87,5 +77,138 @@
         }
       }
     }
+  }
+}
+
+/* Media Queries */
+@media only screen and (max-width: $small-tablet-width) {
+  .banner__accommodations {
+    height: 40vh;
+  }
+
+  .accommodations__results {
+    margin: 2.5em auto;
+
+    .card {
+      flex-direction: column;
+
+      h1 {
+        font-size: 1.7em;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+
+      &__img-container {
+        width: 100%;
+
+        &__img {
+          height: 30vh;
+          width: 100%;
+        }
+      }
+
+      &__desc {
+        padding: 2em 1em;
+        width: 100%;
+
+        &__special-features {
+          padding: 1em 0 1em 0;
+        }
+
+        &__btn {
+          margin-top: 0.5em;
+          padding: 0.6em 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
+  .banner__accommodations {
+    height: 50vh;
+  }
+
+  .accommodations__results {
+    margin: 5em auto;
+
+    .card {
+      align-items: center;
+      flex-direction: row;
+
+      h1 {
+        font-size: 1.9em;
+      }
+
+      h2 {
+        font-size: 1.7em;
+      }
+
+      &__img-container {
+        width: 100%; 
+
+        &__img {
+          height: 25vh;
+          width: 100%;
+        }
+      }
+
+      &__desc {
+        margin: 0 2em;
+
+        &__special-features {
+          padding: 0 0 1em 0;
+          font-size: 0.9em;
+        }
+
+        &__btn {
+          margin-top: 0.5em;
+          padding: 0.5em 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $desktop-width) {
+  .banner__accommodations {
+    height: 60vh;
+  }
+
+  .accommodations__results {
+    margin: 6em auto 2em auto;
+
+    .card {
+      align-items: center;
+      flex-direction: row;
+
+      &__img-container {
+        &__img {
+          height: 30vh;
+          width: 90%;
+        }
+      }
+
+      &__desc {
+        margin: 0 3em;
+
+        &__special-features {
+          padding: 1em 0 1.5em 0;
+        }
+
+        &__btn {
+          margin-top: 2em;
+          padding: 0.8em 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $big-desktop-width) {
+  .accommodations {
+    min-width: 70%;
   }
 }

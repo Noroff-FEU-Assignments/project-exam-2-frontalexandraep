@@ -7,7 +7,6 @@ import { HelmetProvider } from "react-helmet-async";
 import Home from "../home/Home.js";
 import Accommodations from "../accommodations/Accommodations";
 import Details from "../accommodations/Details";
-import Confirmation from "../accommodations/enquiry/Confirmation";
 import Contact from "../contact/Contact";
 import Login from "../login/Login";
 import Admin from "../admin/Admin";
@@ -26,7 +25,6 @@ export default function Layout() {
               <Route path="/" exact component={Home} />
               <Route path="/accommodations/" exact component={Accommodations} />
               <Route path="/accommodations/:id" exact component={Details} />
-              <Route path="/confirmation" component={Confirmation} />
               <Route path="/contact" component={Contact} />
               <Route path="/login" component={Login} />
               <Route path="/admin" exact component={Admin} />

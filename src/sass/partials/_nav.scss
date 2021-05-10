@@ -1,6 +1,5 @@
 .navbar {
   background-color: $colour-background;
-  padding: 0.5em 5em;
   margin: 0.5em 0 0.5em 0;
 
   &__logo {
@@ -38,6 +37,8 @@
 
 @media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
   .navbar {
+    padding: 0.5em 5em;
+    
     .nav-link {
       margin: 1em 0 1em 0;
 
@@ -50,6 +51,8 @@
 
 @media only screen and (min-width: $desktop-width) {
   .navbar {
+    padding: 0.5em 5em;
+
     .nav-link {
       margin-left: 1.5em;
       padding-bottom: 0.4em;

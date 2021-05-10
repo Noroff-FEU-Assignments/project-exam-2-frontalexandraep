@@ -53,9 +53,6 @@ export default function AccommodationsList() {
             restaurant,
             pet_friendly,
             parking_available,
-            guesthouse,
-            hotel,
-            bed_and_breakfast,
           } = accommodation;
 
           return (
@@ -70,9 +67,6 @@ export default function AccommodationsList() {
               restaurant={restaurant}
               pet_friendly={pet_friendly}
               parking_available={parking_available}
-              guesthouse={guesthouse}
-              hotel={hotel}
-              bed_and_breakfast={bed_and_breakfast}
             />
           );
         })}
