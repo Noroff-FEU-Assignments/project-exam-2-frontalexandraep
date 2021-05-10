@@ -63,7 +63,6 @@ export default function Details() {
           <i className="fas fa-chevron-left icon"></i>
           Return
         </a>
-        <Heading size="2" content={establishment.name} />
         <div className="details__card">
           <div className="details__card__img-container">
             <img
@@ -73,6 +72,7 @@ export default function Details() {
             />
           </div>
           <div className="details__card__desc">
+          <Heading size="2" content={establishment.name} />
             <h3>{establishment.price} NOK</h3>
             <ul className="details__card__desc__special-features">
               {establishment.bar && (

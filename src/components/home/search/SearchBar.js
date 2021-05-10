@@ -40,10 +40,17 @@ export default function SearchBar() {
       <div className="search-bar__results">
         <ul className="search-bar__results__list">
           {establishmentMatch.map((estab) => (
-            <li className="search-bar__results__list--item" key={estab.id}>
-              <Link to={`accommodations/${estab.id}`}>{estab.name}</Link>
+            <Link
+              key={estab.id}
+              className="search-bar__results__list__item"
+              to={`accommodations/${estab.id}`}
+            >
               <img src={estab.image[0].url} alt={estab.name} />
-            </li>
+              <div className="search-bar__results__list__item--info">
+                <p>{estab.name}</p>
+                <p>{estab.price} NOK</p>
+              </div>
+            </Link>
           ))}
         </ul>
       </div>

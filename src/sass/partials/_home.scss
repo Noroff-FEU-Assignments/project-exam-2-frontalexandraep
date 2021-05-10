@@ -40,23 +40,28 @@
     &__list {
       position: absolute;
       list-style: none;
-      padding: 0.2em 0.2em 0 0.2em;
+      padding: 0;
       margin: 0;
 
-      &--item {
-        background: #ffffffd8;
-        padding: 0.5em;
+      &__item {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        background: #ffffffe3;
+        color: $colour-text;
 
-        a {
+        img {
+          object-fit: cover;
+        }
+
+        p {
+          margin: 0;
+          text-transform: uppercase;
+        }
+
+        &:hover {
+          filter: brightness(80%);
           color: $colour-text;
-
-          &:hover {
-            text-decoration: none;
-            font-style: italic;
-          }
+          text-decoration: none;
         }
       }
     }
@@ -111,8 +116,16 @@
       &__results__list {
         width: 36vh;
 
-        &--item img {
-          display: none;
+        &__item {
+          img {
+            width: 5em;
+            height: 5em;
+          }
+
+          &--info p {
+            margin-left: 1em;
+            font-size: 1.1em;
+          }
         }
       }
     }
@@ -157,9 +170,15 @@
       &__results__list {
         width: 36vh;
 
-        &--item img {
-          width: 6em;
-          height: 3.5em;
+        &__item {
+          img {
+            width: 6em;
+            height: 6em;
+          }
+          &--info p {
+            margin-left: 1em;
+            font-size: 1.1em;
+          }
         }
       }
     }
@@ -204,10 +223,15 @@
       &__results__list {
         width: 25em;
 
-        &--item {
+        &__item {
           img {
-            width: 10em;
-            height: 5.5em;
+            width: 7em;
+            height: 7em;
+          }
+
+          &--info p {
+            margin-left: 1em;
+            font-size: 1.1em;
           }
         }
       }

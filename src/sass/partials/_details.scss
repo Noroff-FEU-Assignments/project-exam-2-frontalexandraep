@@ -112,11 +112,7 @@
     &__return-link {
       margin: 0 0 0 1.5em;
     }
-
-    h2 {
-      margin: 0.3em 0 0 0.7em;
-    }
-
+    
     &__card {
       flex-direction: column;
 
@@ -212,6 +208,6 @@
 
 @media only screen and (min-width: $big-desktop-width) {
   .details {
-    min-width: 70%;
+    min-width: 60%; 
   }
 }
