@@ -73,7 +73,7 @@ export default function Enquiry(props) {
 
   return (
     <>
-      <Modal animation={false} show={props.show} onHide={props.onHide}>
+      <Modal className="enquiry" animation={false} show={props.show} onHide={props.onHide}>
         <Modal.Header closeButton>
           <Heading
             size="1"
@@ -85,7 +85,7 @@ export default function Enquiry(props) {
           size="2"
           content="Fill out the form to complete your booking"
         />
-        <Form className="enquiry-form" onSubmit={handleSubmit(onSubmit)}>
+        <Form className="enquiry__form" onSubmit={handleSubmit(onSubmit)}>
           <Form.Group>
             <Form.Label>Full name</Form.Label>
             <Form.Control
@@ -141,12 +141,12 @@ export default function Enquiry(props) {
               receive a booking confirmation with all details within 24 hours.
             </Alert>
           )}
-          <button type="submit">
+          <button className="enquiry__form__btn" type="submit">
             {submitting ? "Submitting..." : "Submit"}
           </button>
         </Form>
-        <Modal.Footer>
-          <Link to={`/accommodations`}>Return to all accommodations</Link>
+        <Modal.Footer className="enquiry__footer">
+          <Link className="enquiry__footer__link" to={`/accommodations`}>Return to all accommodations</Link>
         </Modal.Footer>
       </Modal>
     </>

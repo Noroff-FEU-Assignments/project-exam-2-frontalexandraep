@@ -1,12 +1,90 @@
+.enquiry {
+  .modal-dialog {
+    margin: 7em auto;
+  }
+
+  .modal-content {
+    padding: 2.5em;
+    background: $colour-background;
+  }
+
+  .modal-header,
+  .modal-footer {
+    padding: 0;
+  }
+
+  .modal-header {
+    border-bottom: none;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  h1,
+  h2,
+  .modal-footer {
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  &__form {
+    margin-top: 1.5em;
+
+    .form-group {
+      margin-bottom: 2em;
+    }
+
+    label {
+      text-transform: uppercase;
+    }
+
+    input {
+      background: none;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      border-bottom: 2px solid $colour-border;
+
+      &:focus {
+        background: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+    }
+
+    &__btn {
+      background: $colour-accent;
+      font-size: 1.1em;
+      color: $colour-text;
+      padding: 0.6em;
+      border: none;
+      border-radius: 2px;
+      width: 100%;
+      font-family: $font-secondary;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+    }
+  }
+}
+
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {
-  
 }
 
 @media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
-  
 }
 
 @media only screen and (min-width: $desktop-width) {
-  
 }
