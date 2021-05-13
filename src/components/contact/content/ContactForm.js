@@ -73,8 +73,9 @@ export default function ContactForm() {
           Your message was successfully sent. We will contact you shortly!
         </Alert>
       )}
-      <Form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+      <Form className="contact__right__form" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group>
+          <Form.Label>First Name</Form.Label>
           <Form.Control
             name="first_name"
             placeholder="First Name"
@@ -86,6 +87,7 @@ export default function ContactForm() {
         </Form.Group>
 
         <Form.Group>
+          <Form.Label>Last Name</Form.Label>
           <Form.Control
             name="last_name"
             placeholder="Last Name"
@@ -97,6 +99,7 @@ export default function ContactForm() {
         </Form.Group>
 
         <Form.Group>
+          <Form.Label>Email address</Form.Label>
           <Form.Control
             name="email_address"
             placeholder="Email Address"
@@ -108,6 +111,7 @@ export default function ContactForm() {
         </Form.Group>
 
         <Form.Group>
+          <Form.Label>Subject</Form.Label>
           <Form.Control name="subject" ref={register} as="select">
             <option value="">Subject..</option>
             <option value="Booking">Booking</option>
@@ -119,16 +123,19 @@ export default function ContactForm() {
         </Form.Group>
 
         <Form.Group>
+          <Form.Label>Message</Form.Label>
           <Form.Control
             name="message"
-            placeholder="Message.."
+            placeholder="Your message.."
             ref={register}
             as="textarea"
             rows={5}
           />
           {errors.message && <FormError>{errors.message.message}</FormError>}
         </Form.Group>
-        <button type="submit">{sending ? "Sending.." : "Send"}</button>
+        <button className="contact__right__form__btn" type="submit">
+          {sending ? "Sending.." : "Send"}
+        </button>
       </Form>
     </>
   );

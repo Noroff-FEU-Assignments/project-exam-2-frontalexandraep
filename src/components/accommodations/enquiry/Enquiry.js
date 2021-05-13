@@ -73,7 +73,12 @@ export default function Enquiry(props) {
 
   return (
     <>
-      <Modal className="enquiry" animation={false} show={props.show} onHide={props.onHide}>
+      <Modal
+        className="enquiry"
+        animation={false}
+        show={props.show}
+        onHide={props.onHide}
+      >
         <Modal.Header closeButton>
           <Heading
             size="1"
@@ -146,7 +151,10 @@ export default function Enquiry(props) {
           </button>
         </Form>
         <Modal.Footer className="enquiry__footer">
-          <Link className="enquiry__footer__link" to={`/accommodations`}>Return to all accommodations</Link>
+          <Link className="enquiry__footer__link" to={`/accommodations`}>
+            Return to all accommodations
+            <i className="fas fa-chevron-right icon"></i>
+          </Link>
         </Modal.Footer>
       </Modal>
     </>
