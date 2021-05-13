@@ -40,7 +40,7 @@ export default function LoginForm() {
       history.push("/admin");
     } catch (error) {
       console.log("error", error);
-      setLoginError(error.toString());
+      setLoginError(error);
     } finally {
       setSubmitting(false);
     }
@@ -48,13 +48,13 @@ export default function LoginForm() {
 
   return (
     <>
-      <Form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-        {loginError && <FormError>{loginError}</FormError>}
+      <Form className="login__content__form" onSubmit={handleSubmit(onSubmit)}>
         <fieldset disabled={submitting}>
           <Form.Group>
+            <Form.Label>Username/email address</Form.Label>
             <Form.Control
               name="identifier"
-              placeholder="Username"
+              placeholder="Username/email address..."
               ref={register}
             />
             {errors.identifier && (
@@ -62,6 +62,7 @@ export default function LoginForm() {
             )}
           </Form.Group>
           <Form.Group>
+            <Form.Label>Password</Form.Label>
             <Form.Control
               name="password"
               placeholder="Password"
@@ -72,7 +73,12 @@ export default function LoginForm() {
               <FormError>{errors.password.message}</FormError>
             )}
           </Form.Group>
-          <button>{submitting ? "Logging in..." : "Login"}</button>
+          {loginError && (
+            <FormError>Invalid login values. Please try again!</FormError>
+          )}
+          <button className="login__content__form__btn">
+            {submitting ? "Logging in..." : "Login"}
+          </button>
         </fieldset>
       </Form>
     </>
