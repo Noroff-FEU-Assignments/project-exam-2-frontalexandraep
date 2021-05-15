@@ -15,35 +15,35 @@ export default function Entry({
   created_at,
 }) {
   return (
-    <Accordion className="entries__results__single">
-      <Card>
+    <Accordion className="entries__results__row__acc">
+      <Card className="entries__results__row__acc__card">
         <Accordion.Toggle as={Card.Header} eventKey={id}>
           <p>Subject: {subject}</p>
           <p>Sent: {dateFormat(created_at, "dd.mm.yyyy")}</p>
         </Accordion.Toggle>
         <Accordion.Collapse eventKey={id}>
-          <Card.Body>
-            <div>
-              <Heading size="3" content="First name" />
-              <p>{first_name}</p>
+          <Card.Body className="entries__results__row__acc__card__body">
+            <Heading size="3" content="First name" />
+            <p>{first_name}</p>
 
-              <Heading size="3" content="Last name" />
-              <p>{last_name}</p>
-            </div>
+            <Heading size="3" content="Last name" />
+            <p>{last_name}</p>
 
-            <div>
-              <Heading size="3" content="Email address" />
-              <p>{email_address}</p>
+            <Heading size="3" content="Email address" />
+            <p>{email_address}</p>
 
-              <Heading size="3" content="Subject" />
-              <p>{subject}</p>
-            </div>
+            <Heading size="3" content="Subject" />
+            <p>{subject}</p>
 
             <Heading size="3" content="Message" />
             <p>{message}</p>
 
-            <a href={`mailto:${email_address}`}>Reply</a>
-            <DeleteEntry id={id}/>
+            <div className="btns">
+              <a className="btn btns__accept" href={`mailto:${email_address}`}>
+                Reply
+              </a>
+              <DeleteEntry id={id} />
+            </div>
           </Card.Body>
         </Accordion.Collapse>
       </Card>

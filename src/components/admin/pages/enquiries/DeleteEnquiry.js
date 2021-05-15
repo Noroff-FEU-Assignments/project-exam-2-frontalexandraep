@@ -25,7 +25,7 @@ export default function DeleteEnquiry({ id }) {
   }
 
   return (
-    <button type="button" className="btn__delete" onClick={handleReject}>
+    <button type="button" className="btn btns__delete" onClick={handleReject}>
       {error ? "Error" : "Reject"}
     </button>
   );

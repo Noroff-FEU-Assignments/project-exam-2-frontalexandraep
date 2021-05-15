@@ -41,7 +41,7 @@ export default function EnquiriesList() {
 
   return (
     <div className="entries__results">
-      <Row>
+      <Row xs={1} md={2} lg={2} className="entries__results__row">
         {entries.map(function (entry) {
           const {
             id,
