@@ -1,7 +1,7 @@
 /* Hero Banner */
 .hero-banner {
   background-image: url(../../images/hero.jpg);
-  height: 85vh;
+  height: 87vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@
 
 /* Search bar */
 .search-bar {
-  font-size: 1em;
+  font-size: 0.9em;
 
   input {
     display: block;
@@ -106,20 +106,20 @@
   }
 
   .hero-banner__content {
-    width: 36vh;
+    min-width: 250px;
 
     .search-bar {
       input {
-        width: 36vh;
+        min-width: 250px;
       }
 
       &__results__list {
-        width: 36vh;
+        min-width: 250px;
 
         &__item {
           img {
-            width: 5em;
-            height: 5em;
+            width: 6em;
+            height: 6em;
           }
 
           &--info p {
@@ -160,15 +160,15 @@
   }
 
   .hero-banner__content {
-    width: 36vh;
+    width: 360px;
 
     .search-bar {
       input {
-        width: 36vh;
+        width: 360px;
       }
 
       &__results__list {
-        width: 36vh;
+        width: 360px;
 
         &__item {
           img {
@@ -213,15 +213,15 @@
   }
 
   .hero-banner__content {
-    width: 25em;
+    width: 360px;
 
     .search-bar {
       input {
-        width: 25em;
+        width: 360px;
       }
 
       &__results__list {
-        width: 25em;
+        width: 360px;
 
         &__item {
           img {

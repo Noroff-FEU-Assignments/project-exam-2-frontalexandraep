@@ -100,7 +100,7 @@
     display: block;
 
     &__left {
-      height: 40vh;
+      height: 400px;
 
       &__content {
         width: 80%;
@@ -115,8 +115,7 @@
   }
 
   .alert {
-    margin-top: 2em;
-    margin-bottom: 0;
+    margin-bottom: 2em;
   }
 }
 
@@ -125,7 +124,7 @@
     display: block;
 
     &__left {
-      height: 50vh;
+      height: 500px;
 
       &__content {
         width: 75%;
@@ -139,8 +138,7 @@
     }
 
     .alert {
-      margin-top: 2em;
-      margin-bottom: 0;
+      margin-bottom: 2em;
     }
   }
 }
@@ -149,7 +147,7 @@
   .contact {
     &__left {
       margin-right: 2em;
-      height: 76vh;
+      height: 750px;
 
       &__content {
         width: 80%;

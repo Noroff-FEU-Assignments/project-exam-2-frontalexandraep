@@ -1,7 +1,7 @@
 /* Banner */
 .login {
   background-image: url(../../images/admin.jpg);
-  height: 85vh;
+  height: 80vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,18 +75,18 @@
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {
   .login__content {
-    width: 35vh;
+    width: 250px;
   }
 }
 
 @media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
   .login__content {
-    width: 40vh;
+    width: 360px;
   }
 }
 
 @media only screen and (min-width: $desktop-width) {
   .login__content {
-    width: 40vh;
+    width: 360px;
   }
 }

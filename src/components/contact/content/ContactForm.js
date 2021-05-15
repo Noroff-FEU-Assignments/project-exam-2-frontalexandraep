@@ -68,11 +68,6 @@ export default function ContactForm() {
 
   return (
     <>
-      {submitted && (
-        <Alert variant="success">
-          Your message was successfully sent. We will contact you shortly!
-        </Alert>
-      )}
       <Form className="contact__right__form" onSubmit={handleSubmit(onSubmit)}>
         <Form.Group>
           <Form.Label>First Name</Form.Label>
@@ -133,6 +128,11 @@ export default function ContactForm() {
           />
           {errors.message && <FormError>{errors.message.message}</FormError>}
         </Form.Group>
+        {submitted && (
+          <Alert variant="success">
+            Your message was successfully sent. We will contact you shortly!
+          </Alert>
+        )}
         <button className="contact__right__form__btn" type="submit">
           {sending ? "Sending.." : "Send"}
         </button>

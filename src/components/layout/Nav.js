@@ -10,7 +10,7 @@ export default function Navigation() {
   const [auth, setAuth] = useContext(AuthContext);
   const history = useHistory();
 
-  function logout() {
+  function signout() {
     setAuth(null);
     history.push("/");
   }
@@ -37,8 +37,9 @@ export default function Navigation() {
               <NavLink to="/admin" className="nav-link">
                 admin
               </NavLink>
-              <Button onClick={logout}>
-                Log Out
+              <Button className="signout-btn" onClick={signout}>
+                sign out
+                <i class="fas fa-sign-out-alt icon"></i>
               </Button>
             </>
           ) : (

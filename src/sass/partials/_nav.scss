@@ -1,6 +1,5 @@
 .navbar {
   background-color: $colour-background;
-  margin: 0.5em 0 0.5em 0;
 
   &__logo {
     width: 7em;
@@ -18,7 +17,23 @@
   }
 
   .navbar-toggler {
-      background: $colour-ui-shadow;
+    background: $colour-background;
+  }
+}
+
+/* LOGOUT BTN */
+.signout-btn {
+  color: $colour-text;
+  background: none;
+  border: none;
+  font-size: 1.1em;
+
+  .icon {
+    padding-left: 0.5em;
+  }
+
+  &:hover {
+    background: $colour-accent;
   }
 }
 
@@ -33,28 +48,16 @@
       }
     }
   }
+  .signout-btn {
+    margin: 1em 0 0.5em 0;
+  }
 }
 
 @media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
   .navbar {
     padding: 0.5em 5em;
-    
-    .nav-link {
-      margin: 1em 0 1em 0;
-
-      &:hover {
-        font-weight: 400;
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: $desktop-width) {
-  .navbar {
-    padding: 0.5em 5em;
 
     .nav-link {
-      margin-left: 1.5em;
       padding-bottom: 0.4em;
 
       &:hover {
@@ -62,4 +65,28 @@
       }
     }
   }
+
+  .logout-btn {
+    margin-left: 1em;
+  }
 }
+
+@media only screen and (min-width: $desktop-width) {
+  .navbar {
+    padding: 0.6em 5em;
+
+    .nav-link {
+      margin-left: 1.5em;
+
+      &:hover {
+        border-bottom: 1px solid $colour-border;
+      }
+    }
+  }
+
+  .signout-btn {
+    margin-left: 1em;
+  }
+}
+
+

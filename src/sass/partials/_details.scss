@@ -107,7 +107,7 @@
   }
 
   .details {
-    margin: 2.5em auto 5em auto;
+    margin: 2.5em auto 3em auto;
 
     &__return-link {
       margin: 0 0 0 1.5em;
@@ -121,7 +121,7 @@
         
         &__img {
         width: 100%;
-        height: 30vh;
+        height: 20em;
       }
     }
 
@@ -143,7 +143,7 @@
 
 @media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
   .details {
-    margin: 3.5em auto 7em auto;
+    margin: 3.5em auto 4em auto;
 
     &__card {
       align-items: center;
@@ -151,7 +151,7 @@
       &__img-container {
         &__img {
           width: 90%;
-          height: 30vh;
+          height: 20em;
         }
       }
 
@@ -175,7 +175,7 @@
 
 @media only screen and (min-width: $desktop-width) {
   .details {
-    margin: 5em auto 8em auto;
+    margin: 5em auto 7em auto;
 
     &__card {
       align-items: center;
@@ -183,7 +183,7 @@
       &__img-container {
         &__img {
           width: 100%;
-          height: 35vh;
+          height: 22em;
         }
       }
 
