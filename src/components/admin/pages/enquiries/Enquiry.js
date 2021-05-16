@@ -17,22 +17,26 @@ export default function Enquiry({
   return (
     <Accordion className="enquiries__results__row__acc">
       <Card className="enquiries__results__row__acc__card">
-        <Accordion.Toggle as={Card.Header} eventKey={id}>
+        <Accordion.Toggle
+          className="enquiries__results__row__acc__card__header"
+          as={Card.Header}
+          eventKey={id}
+        >
           <p>Establishment: {establishment_name}</p>
           <p>Sent: {dateFormat(created_at, "dd.mm.yyyy")}</p>
         </Accordion.Toggle>
         <Accordion.Collapse eventKey={id}>
           <Card.Body className="enquiries__results__row__acc__card__body">
-            <Heading size="3" content="Full name of client" />
+            <Heading size="3" content="Full name of client:" />
             <p>{full_name}</p>
 
-            <Heading size="3" content="Email address of client" />
+            <Heading size="3" content="Email address of client:" />
             <p>{email_address}</p>
 
-            <Heading size="3" content="Check-in date" />
+            <Heading size="3" content="Check-in date:" />
             <p>{dateFormat(check_in, "dd.mm.yyyy")}</p>
 
-            <Heading size="3" content="Check-out date" />
+            <Heading size="3" content="Check-out date:" />
             <p>{dateFormat(check_out, "dd.mm.yyyy")}</p>
 
             <div className="btns">

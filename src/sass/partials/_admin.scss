@@ -1,4 +1,4 @@
-/* Banner */
+/* Banner & Content */
 .banner__admin {
   background-image: url(../../images/admin.jpg);
   height: 85vh;
@@ -19,13 +19,15 @@
     }
 
     a {
-      display: block;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 1.5em;
       color: $colour-white;
       text-transform: uppercase;
       border-bottom: 1px solid $colour-white;
-      padding: 1em 2em 0.2em 2em;
+      padding: 1em 0 0.2em 0;
+      margin-bottom: 0.5em;
 
       &:hover {
         text-decoration: none;
@@ -34,16 +36,23 @@
     }
   }
 }
+/*_____________________*/
 
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {
-  
+  .banner__admin__content a {
+    width: 300px;
+  }
 }
 
 @media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
-  
+  .banner__admin__content a {
+    width: 380px;
+  }
 }
 
 @media only screen and (min-width: $desktop-width) {
-  
+  .banner__admin__content a {
+    width: 400px;
+  }
 }

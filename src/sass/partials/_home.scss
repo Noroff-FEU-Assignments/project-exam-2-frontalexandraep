@@ -19,6 +19,7 @@
     }
   }
 }
+/*_____________________*/
 
 /* Search bar */
 .search-bar {
@@ -67,9 +68,14 @@
     }
   }
 }
+/*_____________________*/
 
 /* Home Main */
 .home {
+  .image-container {
+    display: flex;
+  }
+
   &__button {
     display: block;
     padding: 3em 0;
@@ -92,11 +98,8 @@
       padding-left: 1em;
     }
   }
-
-  .image-container {
-    display: flex;
-  }
 }
+/*_____________________*/
 
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {

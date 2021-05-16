@@ -39,7 +39,7 @@ export default function Navigation() {
               </NavLink>
               <Button className="signout-btn" onClick={signout}>
                 sign out
-                <i class="fas fa-sign-out-alt icon"></i>
+                <i className="fas fa-sign-out-alt icon"></i>
               </Button>
             </>
           ) : (

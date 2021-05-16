@@ -1,3 +1,4 @@
+/* Navigation Bar */
 .navbar {
   background-color: $colour-background;
 
@@ -20,13 +21,15 @@
     background: $colour-background;
   }
 }
+/*_____________________*/
 
-/* LOGOUT BTN */
+/* Sign Out Button */
 .signout-btn {
   color: $colour-text;
   background: none;
   border: none;
   font-size: 1.1em;
+  font-weight: 300;
 
   .icon {
     padding-left: 0.5em;
@@ -36,6 +39,7 @@
     background: $colour-accent;
   }
 }
+/*_____________________*/
 
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {
@@ -76,6 +80,7 @@
     padding: 0.6em 5em;
 
     .nav-link {
+      padding-bottom: 0.5em;
       margin-left: 1.5em;
 
       &:hover {
@@ -89,4 +94,8 @@
   }
 }
 
-
+@media only screen and (min-width: $big-desktop-width) {
+  .navbar .nav-link {
+    padding-bottom: 0.55em;
+  }
+}

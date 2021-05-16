@@ -1,3 +1,4 @@
+/* Booking Enquiry - MODAL */
 .enquiry {
   .modal-content {
     padding: 2.5em;
@@ -48,11 +49,11 @@
       margin-bottom: 2em;
     }
 
-    label {
+    .form-label {
       text-transform: uppercase;
     }
 
-    input {
+    .form-control {
       background: none;
       border: none;
       border-radius: 0;
@@ -87,6 +88,7 @@
     }
   }
 }
+/*_____________________*/
 
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {

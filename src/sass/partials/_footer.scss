@@ -1,7 +1,9 @@
+/* Footer */
 .footer {
   border-top: 1px solid $colour-border;
   width: 100%;
 
+  /* Footer Top */
   &__row {
     padding: 2em 5em 1.5em 5em;
     width: 100%;
@@ -22,6 +24,7 @@
     }
   }
 
+  /* Footer Bottom */
   .footer__bottom {
     border-top: 1px solid $colour-border;
     padding: 1.2em 0;
@@ -46,6 +49,7 @@
     }
   }
 }
+/*_____________________*/
 
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {

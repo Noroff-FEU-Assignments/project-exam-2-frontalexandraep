@@ -1,3 +1,4 @@
+/* Contact */
 .contact {
   display: flex;
   margin: 1em auto 3em auto;
@@ -51,13 +52,11 @@
         margin-bottom: 2em;
       }
 
-      label {
+      .form-label {
         text-transform: uppercase;
       }
 
-      input,
-      textarea,
-      select {
+      .form-control {
         background: none;
         border: none;
         border-radius: 0;
@@ -75,7 +74,7 @@
         background: $colour-accent;
         font-size: 1.1em;
         color: $colour-text;
-        padding: 0.6em;
+        padding: 0.8em;
         border: none;
         border-radius: 2px;
         width: 100%;
@@ -93,6 +92,7 @@
     }
   }
 }
+/*_____________________*/
 
 /* Media Queries */
 @media only screen and (max-width: $mobile-width) {

@@ -17,25 +17,29 @@ export default function Entry({
   return (
     <Accordion className="entries__results__row__acc">
       <Card className="entries__results__row__acc__card">
-        <Accordion.Toggle as={Card.Header} eventKey={id}>
+        <Accordion.Toggle
+          className="entries__results__row__acc__card__header"
+          as={Card.Header}
+          eventKey={id}
+        >
           <p>Subject: {subject}</p>
           <p>Sent: {dateFormat(created_at, "dd.mm.yyyy")}</p>
         </Accordion.Toggle>
         <Accordion.Collapse eventKey={id}>
           <Card.Body className="entries__results__row__acc__card__body">
-            <Heading size="3" content="First name" />
+            <Heading size="3" content="First name:" />
             <p>{first_name}</p>
 
-            <Heading size="3" content="Last name" />
+            <Heading size="3" content="Last name:" />
             <p>{last_name}</p>
 
-            <Heading size="3" content="Email address" />
+            <Heading size="3" content="Email address:" />
             <p>{email_address}</p>
 
-            <Heading size="3" content="Subject" />
+            <Heading size="3" content="Subject:" />
             <p>{subject}</p>
 
-            <Heading size="3" content="Message" />
+            <Heading size="3" content="Message:" />
             <p>{message}</p>
 
             <div className="btns">
