@@ -72,7 +72,7 @@ export default function Details() {
             />
           </div>
           <div className="details__card__desc">
-          <Heading size="2" content={establishment.name} />
+            <Heading size="2" content={establishment.name} />
             <h3>{establishment.price} NOK</h3>
             <ul className="details__card__desc__special-features">
               {establishment.bar && (

@@ -1,10 +1,10 @@
+import { useContext } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
-import { NavLink, useHistory } from "react-router-dom";
-import logo from "../../images/logo.svg";
-import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
+import logo from "../../images/logo.svg";
 
 export default function Navigation() {
   const [auth, setAuth] = useContext(AuthContext);

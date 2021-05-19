@@ -13,7 +13,6 @@ export default function Card({
   pet_friendly,
   parking_available,
 }) {
-
   return (
     <div className="card" key={id}>
       <div className="card__img-container">

@@ -42,7 +42,7 @@
 /*_____________________*/
 
 /* Media Queries */
-@media only screen and (max-width: $mobile-width) {
+@media only screen and (max-width: $small-tablet-width) {
   .navbar {
     .nav-link {
       margin: 0.7em 0 0.7em 0;
@@ -57,7 +57,7 @@
   }
 }
 
-@media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
+@media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
   .navbar {
     padding: 0.5em 5em;
 
@@ -80,7 +80,7 @@
     padding: 0.6em 5em;
 
     .nav-link {
-      padding-bottom: 0.5em;
+      padding-bottom: 0.55em;
       margin-left: 1.5em;
 
       &:hover {

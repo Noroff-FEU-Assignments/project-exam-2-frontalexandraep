@@ -17,7 +17,10 @@ const schema = yup.object().shape({
   pet_friendly: yup.boolean(),
   bar: yup.boolean(),
   name: yup.string().required("Establishment name is required"),
-  price: yup.number().typeError("Price is required").required("Price is required"),
+  price: yup
+    .number()
+    .typeError("Price is required")
+    .required("Price is required"),
   description: yup.string().required("Description is required"),
 });
 
@@ -156,6 +159,8 @@ export default function AddEstab() {
           <Form.Group>
             <Form.Label>Description</Form.Label>
             <Form.Control
+              as="textarea"
+              row={3}
               name="description"
               placeholder="Description.."
               ref={register}
@@ -168,7 +173,9 @@ export default function AddEstab() {
           {submitted && (
             <Alert variant="success">Establishment successfully added.</Alert>
           )}
-          <button className="add-page__form__btn">{adding ? "Adding..." : "Add new establishment"}</button>
+          <button className="add-page__form__btn">
+            {adding ? "Adding..." : "Add new establishment"}
+          </button>
         </div>
       </Form>
     </>

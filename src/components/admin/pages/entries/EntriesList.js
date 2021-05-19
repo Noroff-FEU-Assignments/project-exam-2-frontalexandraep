@@ -42,30 +42,32 @@ export default function EnquiriesList() {
   return (
     <div className="entries__results">
       <Row xs={1} md={2} lg={2} className="entries__results__row">
-        {entries.map(function (entry) {
-          const {
-            id,
-            first_name,
-            last_name,
-            email_address,
-            subject,
-            message,
-            created_at,
-          } = entry;
+        {entries
+          .map(function (entry) {
+            const {
+              id,
+              first_name,
+              last_name,
+              email_address,
+              subject,
+              message,
+              created_at,
+            } = entry;
 
-          return (
-            <Entry
-              key={id}
-              id={id}
-              first_name={first_name}
-              last_name={last_name}
-              email_address={email_address}
-              subject={subject}
-              message={message}
-              created_at={created_at}
-            />
-          );
-        }).reverse()}
+            return (
+              <Entry
+                key={id}
+                id={id}
+                first_name={first_name}
+                last_name={last_name}
+                email_address={email_address}
+                subject={subject}
+                message={message}
+                created_at={created_at}
+              />
+            );
+          })
+          .reverse()}
       </Row>
     </div>
   );

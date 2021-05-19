@@ -42,30 +42,32 @@ export default function EnquiriesList() {
   return (
     <div className="enquiries__results">
       <Row xs={1} md={2} lg={2} className="enquiries__results__row">
-        {enquiries.map(function (enquiry) {
-          const {
-            id,
-            full_name,
-            email_address,
-            check_in,
-            check_out,
-            establishment_name,
-            created_at,
-          } = enquiry;
+        {enquiries
+          .map(function (enquiry) {
+            const {
+              id,
+              full_name,
+              email_address,
+              check_in,
+              check_out,
+              establishment_name,
+              created_at,
+            } = enquiry;
 
-          return (
-            <Enquiry
-              key={id}
-              id={id}
-              full_name={full_name}
-              email_address={email_address}
-              check_in={check_in}
-              check_out={check_out}
-              establishment_name={establishment_name}
-              created_at={created_at}
-            />
-          );
-        }).reverse()}
+            return (
+              <Enquiry
+                key={id}
+                id={id}
+                full_name={full_name}
+                email_address={email_address}
+                check_in={check_in}
+                check_out={check_out}
+                establishment_name={establishment_name}
+                created_at={created_at}
+              />
+            );
+          })
+          .reverse()}
       </Row>
     </div>
   );

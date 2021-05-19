@@ -7,7 +7,7 @@ import logo from "../../images/logo.svg";
 function Footer() {
   return (
     <footer className="footer">
-      <Row xs={1} md={4} lg={4} className="footer__row">
+      <Row xs={1} md={2} lg={4} className="footer__row">
         <Col>
           <a href="/">
             <img className="logo" src={logo} alt="Logo" />
@@ -74,7 +74,12 @@ function Footer() {
         </Col>
       </Row>
       <div className="footer__bottom text-sm-center text-md-left">
-        <Row xs={1} md={2} lg={2} className="align-items-center footer__bottom__row">
+        <Row
+          xs={1}
+          md={2}
+          lg={2}
+          className="align-items-center footer__bottom__row"
+        >
           <Col className="footer__bottom__terms">
             <span>© 2021 Holidaze</span>
             <span className="footer__bottom__dots">·</span>

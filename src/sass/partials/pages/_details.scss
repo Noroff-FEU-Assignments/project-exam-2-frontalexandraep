@@ -1,40 +1,53 @@
 /* Banner */
-.banner__accommodations {
-  background-image: url(../../images/accommodations.jpg);
+.banner__details {
+  background-image: url(../../../images/accommodations.jpg);
+  height: 18vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 
-  &__content {
+  h1 {
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 100%;
     transform: translate(-50%, -50%);
-
-    h2 {
-      color: $colour-white;
-    }
+    color: $colour-white;
+    text-align: center;
   }
 }
 /*_____________________*/
 
-/* Accommodations */
-.accommodations__results {
-  .card {
-    margin-bottom: 4.5em;
-    align-items: center;
-    display: flex;
-    width: 100%;
-    background: none;
-    border: none;
+/* Details */
+.details {
+  padding: 0;
 
-    h1,
-    h2 {
-      font-family: $font-secondary;
-      text-transform: uppercase;
-      font-weight: 300;
+  &__return-link {
+    display: block;
+    text-transform: uppercase;
+    color: $colour-text;
+    padding-bottom: 1.5em;
+
+    .icon {
+      padding-right: 1em;
     }
+
+    &:hover {
+      color: $colour-text;
+    }
+  }
+
+  h2,
+  h3 {
+    font-family: $font-secondary;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  &__card {
+    display: flex;
+    padding-top: 1em;
 
     &__img-container {
       flex: 1;
@@ -52,14 +65,19 @@
         list-style: none;
         display: flex;
         flex-wrap: wrap;
-        border-bottom: 1px solid $colour-border;
+        padding: 0;
 
         &__item {
           background: $colour-ui-shadow-sec;
           padding: 0.5em 0.5em;
-          margin: 0.5em 0.8em 0 0;
+          margin: 0.5em 0;
           border-radius: 2px;
+          margin-right: 0.5em;
         }
+      }
+
+      &__text {
+        border-bottom: 1px solid $colour-border;
       }
 
       &__btn {
@@ -69,6 +87,7 @@
         color: $colour-text;
         display: block;
         text-align: center;
+        border: none;
         border-radius: 2px;
         width: 100%;
 
@@ -83,47 +102,41 @@
 }
 /*_____________________*/
 
-
 /* Media Queries */
 @media only screen and (max-width: $small-tablet-width) {
-  .banner__accommodations {
-    height: 45vh;
+  .banner__details h1 {
+    font-size: 1.95em;
   }
 
-  .accommodations__results {
-    margin: 3.5em auto;
+  .details {
+    margin: 2.5em auto 3em auto;
 
-    .card {
+    &__return-link {
+      margin: 0 0 0 1.5em;
+    }
+
+    &__card {
       flex-direction: column;
-
-      h1 {
-        font-size: 1.7em;
-      }
-
-      h2 {
-        font-size: 1.4em;
-      }
 
       &__img-container {
         width: 100%;
 
         &__img {
-          height: 20em;
           width: 100%;
+          height: 20em;
         }
       }
 
       &__desc {
-        padding: 2em 1em;
-        width: 100%;
+        margin: 2em 1em;
 
-        &__special-features {
-          padding: 1em 0 1em 0;
+        &__text {
+          padding-bottom: 1.5em;
         }
 
         &__btn {
-          margin-top: 0.5em;
-          padding: 0.6em 0;
+          padding: 0.8em 0;
+          margin-top: 1.5em;
         }
       }
     }
@@ -131,45 +144,31 @@
 }
 
 @media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
-  .banner__accommodations {
-    height: 50vh;
-  }
+  .details {
+    margin: 3.5em auto 4em auto;
 
-  .accommodations__results {
-    margin: 5em auto;
-
-    .card {
+    &__card {
       align-items: center;
-      flex-direction: row;
-
-      h1 {
-        font-size: 1.9em;
-      }
-
-      h2 {
-        font-size: 1.7em;
-      }
 
       &__img-container {
-        width: 100%; 
-
         &__img {
-          height: 16em;
-          width: 100%;
+          width: 90%;
+          height: 20em;
         }
       }
 
       &__desc {
-        margin: 0 2em;
+        &__text {
+          padding-bottom: 1em;
+        }
 
         &__special-features {
-          padding: 0 0 1em 0;
-          font-size: 0.9em;
+          padding: 0;
         }
 
         &__btn {
-          margin-top: 0.5em;
           padding: 0.5em 0;
+          margin-top: 0.5em;
         }
       }
     }
@@ -177,34 +176,33 @@
 }
 
 @media only screen and (min-width: $desktop-width) {
-  .banner__accommodations {
-    height: 65vh;
-  }
+  .details {
+    margin: 5em auto 7em auto;
 
-  .accommodations__results {
-    margin: 5em auto 0 auto;
-
-    .card {
+    &__card {
       align-items: center;
-      flex-direction: row;
 
       &__img-container {
         &__img {
-          height: 20em;
-          width: 90%;
+          width: 100%;
+          height: 22em;
         }
       }
 
       &__desc {
-        margin: 0 3em;
+        margin: 0 3.5em 0 3.5em;
+
+        &__text {
+          padding-bottom: 1em;
+        }
 
         &__special-features {
-          padding: 1em 0 1.5em 0;
+          padding: 0;
         }
 
         &__btn {
-          margin-top: 2em;
           padding: 0.8em 0;
+          margin-top: 1.5em;
         }
       }
     }
@@ -212,7 +210,7 @@
 }
 
 @media only screen and (min-width: $big-desktop-width) {
-  .accommodations {
+  .details {
     min-width: 60%;
   }
 }
