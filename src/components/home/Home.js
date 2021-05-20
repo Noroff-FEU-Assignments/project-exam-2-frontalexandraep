@@ -14,6 +14,7 @@ export default function Home() {
           />
           <SearchBar />
         </div>
+        <a href="#home"><div id="home" className="arrow"></div></a>
       </div>
       <Container className="home">
         <div className="home__text">

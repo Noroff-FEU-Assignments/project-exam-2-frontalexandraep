@@ -1,6 +1,6 @@
 import React from "react";
-import Row from "react-bootstrap/row";
-import Col from "react-bootstrap/col";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Heading from "../common/Heading";
 import logo from "../../images/logo.svg";
 

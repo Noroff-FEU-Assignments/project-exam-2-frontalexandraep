@@ -15,6 +15,10 @@
       font-weight: 400;
       color: $colour-ui-primary;
     }
+
+    &:hover {
+      color: $colour-ui-shadow;
+    }
   }
 
   .navbar-toggler {
@@ -46,10 +50,6 @@
   .navbar {
     .nav-link {
       margin: 0.7em 0 0.7em 0;
-
-      &:hover {
-        font-weight: 400;
-      }
     }
   }
   .signout-btn {
@@ -63,10 +63,6 @@
 
     .nav-link {
       padding-bottom: 0.4em;
-
-      &:hover {
-        border-bottom: 1px solid $colour-border;
-      }
     }
   }
 
@@ -80,22 +76,11 @@
     padding: 0.6em 5em;
 
     .nav-link {
-      padding-bottom: 0.55em;
       margin-left: 1.5em;
-
-      &:hover {
-        border-bottom: 1px solid $colour-border;
-      }
     }
   }
 
   .signout-btn {
     margin-left: 1em;
-  }
-}
-
-@media only screen and (min-width: $big-desktop-width) {
-  .navbar .nav-link {
-    padding-bottom: 0.55em;
   }
 }

@@ -1,7 +1,7 @@
 /* Hero Banner */
 .hero-banner {
   background-image: url(../../../images/hero.jpg);
-  height: 87vh;
+  height: 90vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -23,7 +23,7 @@
 
 /* Search bar */
 .search-bar {
-  font-size: 0.9em;
+  font-size: 1em;
 
   input {
     display: block;
@@ -66,6 +66,51 @@
         }
       }
     }
+  }
+}
+/*_____________________*/
+
+/* Scroll Down Animation */
+.arrow,
+.arrow:before {
+  position: absolute;
+  left: 50%;
+}
+
+.arrow {
+  width: 40px;
+  height: 40px;
+  bottom: 3em;
+  margin: -30px 0 0 -30px;
+  transform: rotate(45deg);
+  border-left: none;
+  border-top: none;
+  border-right: 2px $colour-white solid;
+  border-bottom: 2px $colour-white solid;
+}
+
+.arrow:before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  bottom: 1.5em;
+  margin: -1.5em 0 0 -1.5em;
+  border-left: none;
+  border-top: none;
+  border-right: 1px $colour-white solid;
+  border-bottom: 1px $colour-white solid;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: arrow;
+}
+
+@keyframes arrow {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-10px, -10px);
   }
 }
 /*_____________________*/
@@ -216,15 +261,15 @@
   }
 
   .hero-banner__content {
-    width: 360px;
+    width: 350px;
 
     .search-bar {
       input {
-        width: 360px;
+        width: 350px;
       }
 
       &__results__list {
-        width: 360px;
+        width: 350px;
 
         &__item {
           img {

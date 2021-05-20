@@ -24,7 +24,7 @@ export default function Layout() {
             <Switch>
               <Route path="/" exact component={Home} />
               <Route path="/accommodations/" exact component={Accommodations} />
-              <Route path="/accommodations/:id" exact component={Details} />
+              <Route path="/accommodations/:id" component={Details} />
               <Route path="/contact" component={Contact} />
               <Route path="/login" component={Login} />
               <Route path="/admin" exact component={Admin} />
