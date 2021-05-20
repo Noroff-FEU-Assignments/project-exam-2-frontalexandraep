@@ -79,48 +79,29 @@
 /*_____________________*/
 
 /* Scroll Down Animation */
-.arrow,
-.arrow:before {
+.arrow {
   position: absolute;
   left: 50%;
   right: 50%;
   z-index: 0;
-}
-
-.arrow {
   width: 3em;
   height: 3em;
-  bottom: 3em;
-  margin: -3em 0 0 -3em;
   transform: rotate(45deg);
   border-left: none;
   border-top: none;
   border-right: 2px $colour-white solid;
   border-bottom: 2px $colour-white solid;
-}
-
-.arrow:before {
-  content: "";
-  width: 1.5em;
-  height: 1.5em;
-  bottom: 1.5em;
-  margin: -1.5em 0 0 -1.5em;
-  border-left: none;
-  border-top: none;
-  border-right: 1px $colour-white solid;
-  border-bottom: 1px $colour-white solid;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-name: arrow;
+  animation: arrow 2.2s infinite;
 }
 
 @keyframes arrow {
   0% {
     opacity: 1;
+    bottom: 4em;
   }
   100% {
     opacity: 0;
-    transform: translate(-10px, -10px);
+    bottom: 1.5em;
   }
 }
 /*_____________________*/
