@@ -1,11 +1,12 @@
 /* Hero Banner */
 .hero-banner {
   background-image: url(../../../images/hero.jpg);
-  height: 88vh;
+  height: 93vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
 
   &__content {
     position: absolute;
@@ -86,7 +87,7 @@
   z-index: 0;
   width: 3em;
   height: 3em;
-  transform: rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
   border-left: none;
   border-top: none;
   border-right: 2px $colour-white solid;
@@ -97,11 +98,11 @@
 @keyframes arrow {
   0% {
     opacity: 1;
-    bottom: 4em;
+    bottom: 2em;
   }
   100% {
     opacity: 0;
-    bottom: 1.5em;
+    bottom: 0em;
   }
 }
 /*_____________________*/
