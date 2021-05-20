@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Heading from "../common/Heading";
 import SearchBar from "./search/SearchBar";
@@ -28,10 +29,10 @@ export default function Home() {
           </p>
         </div>
         <Images />
-        <a href="accommodations" className="home__button">
-          View all accommodations
+        <Link to="/accommodations" className="home__button">
+          View all accommodations{" "}
           <i className="fas fa-chevron-right home__button__icon"></i>
-        </a>
+        </Link>
       </Container>
     </>
   );
