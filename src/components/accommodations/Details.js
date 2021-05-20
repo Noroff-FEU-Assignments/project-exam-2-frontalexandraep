@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Container from "react-bootstrap/Container";
 import { BASE_URL } from "../../constants/api";
@@ -59,10 +59,9 @@ export default function Details() {
         <Heading size="1" content={establishment.name} />
       </div>
       <Container className="details">
-        <a className="details__return-link" href="/accommodations">
-          <i className="fas fa-chevron-left icon"></i>
-          Return
-        </a>
+        <Link to="/accommodations" className="details__return-link">
+          <i className="fas fa-chevron-left icon"></i>Return
+        </Link>
         <div className="details__card">
           <div className="details__card__img-container">
             <img
