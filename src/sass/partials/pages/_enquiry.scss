@@ -23,6 +23,8 @@
 
     &__link {
       color: $colour-text;
+      width: 100%;
+      text-align: right;
 
       &:hover {
         color: $colour-text;

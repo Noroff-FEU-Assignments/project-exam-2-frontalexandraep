@@ -52,22 +52,11 @@
       margin: 0.7em 0 0.7em 0;
     }
   }
-  .signout-btn {
-    margin: 1em 0 0.5em 0;
-  }
 }
 
 @media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
   .navbar {
     padding: 0.5em 5em;
-
-    .nav-link {
-      padding-bottom: 0.4em;
-    }
-  }
-
-  .logout-btn {
-    margin-left: 1em;
   }
 }
 

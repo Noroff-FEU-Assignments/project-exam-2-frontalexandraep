@@ -33,7 +33,7 @@ export default function SearchBar() {
     <>
       <div className="search-bar">
         <input
-          placeholder="Search..."
+          placeholder="Search accommodations..."
           onChange={(e) => searchEstablishments(e.target.value)}
         />
       </div>

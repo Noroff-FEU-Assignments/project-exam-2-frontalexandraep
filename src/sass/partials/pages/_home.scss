@@ -1,7 +1,7 @@
 /* Hero Banner */
 .hero-banner {
   background-image: url(../../../images/hero.jpg);
-  height: 90vh;
+  height: 88vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9,13 +9,25 @@
 
   &__content {
     position: absolute;
+    z-index: 99;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    h2 {
-      color: $colour-white;
-      text-align: center;
+    &__text {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+
+      h2 {
+        color: $colour-white;
+      }
+
+      .icon {
+        color: $colour-white-translucent;
+        font-size: 1.7em;
+        padding-left: 0.5em;
+      }
     }
   }
 }
@@ -28,42 +40,38 @@
   input {
     display: block;
     margin: 0 auto;
-    padding: 0.8em;
-    border-radius: 3px;
+    padding: 0.65em;
+    border-radius: 2px;
     background: #ffffffd8;
     border: none;
     outline: none;
   }
 
-  &__results {
-    z-index: 99;
+  &__results__list {
+    position: absolute;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-    &__list {
-      position: absolute;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    &__item {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      color: $colour-text;
 
-      &__item {
-        display: flex;
-        align-items: center;
-        background: #ffffffe3;
+      img {
+        object-fit: cover;
+      }
+
+      p {
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        filter: brightness(80%);
         color: $colour-text;
-
-        img {
-          object-fit: cover;
-        }
-
-        p {
-          margin: 0;
-          text-transform: uppercase;
-        }
-
-        &:hover {
-          filter: brightness(80%);
-          color: $colour-text;
-          text-decoration: none;
-        }
+        text-decoration: none;
       }
     }
   }
@@ -75,6 +83,8 @@
 .arrow:before {
   position: absolute;
   left: 50%;
+  right: 50%;
+  z-index: 0;
 }
 
 .arrow {
@@ -182,6 +192,14 @@
   .home {
     margin: 4em auto;
 
+    h1 {
+      font-size: 2.2em;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
     &__button {
       margin-top: 1.5em;
     }
@@ -208,15 +226,15 @@
   }
 
   .hero-banner__content {
-    width: 360px;
+    width: 300px;
 
     .search-bar {
       input {
-        width: 360px;
+        width: 300px;
       }
 
       &__results__list {
-        width: 360px;
+        width: 300px;
 
         &__item {
           img {
@@ -261,15 +279,15 @@
   }
 
   .hero-banner__content {
-    width: 350px;
+    width: 310px;
 
     .search-bar {
       input {
-        width: 350px;
+        width: 310px;
       }
 
       &__results__list {
-        width: 350px;
+        width: 310px;
 
         &__item {
           img {

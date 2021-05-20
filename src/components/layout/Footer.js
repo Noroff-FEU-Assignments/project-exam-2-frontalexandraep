@@ -7,7 +7,7 @@ import logo from "../../images/logo.svg";
 function Footer() {
   return (
     <footer className="footer">
-      <Row xs={1} md={2} lg={4} className="footer__row">
+      <Row xs={1} md={2} lg={4} className="text-sm-center footer__row">
         <Col>
           <a href="/">
             <img className="logo" src={logo} alt="Logo" />
@@ -73,7 +73,7 @@ function Footer() {
           </ul>
         </Col>
       </Row>
-      <div className="footer__bottom text-sm-center text-md-left">
+      <div className="text-sm-center footer__bottom">
         <Row
           xs={1}
           md={2}

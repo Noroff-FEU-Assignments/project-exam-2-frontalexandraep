@@ -145,7 +145,7 @@
 
 @media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
   .details {
-    margin: 3.5em auto 4em auto;
+    margin: 3em auto 4em auto;
 
     &__card {
       align-items: center;
@@ -177,7 +177,7 @@
 
 @media only screen and (min-width: $desktop-width) {
   .details {
-    margin: 5em auto 7em auto;
+    margin: 3.5em auto 7em auto;
 
     &__card {
       align-items: center;

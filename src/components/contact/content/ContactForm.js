@@ -38,7 +38,7 @@ const schema = yup.object().shape({
     .required("Please enter your message")
     .min(
       MINIMUM_MSG_CHARACTERS,
-      `Your message must be at least ${MINIMUM_MSG_CHARACTERS}`
+      `Your message must be at least ${MINIMUM_MSG_CHARACTERS} characters`
     ),
 });
 

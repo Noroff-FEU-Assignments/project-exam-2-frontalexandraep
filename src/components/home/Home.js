@@ -8,13 +8,15 @@ export default function Home() {
     <>
       <div className="hero-banner">
         <div className="hero-banner__content">
-          <Heading
-            size="2"
-            content="Find the accommodation that suits your needs in bergen"
-          />
+          <div className="hero-banner__content__text">
+            <Heading size="2" content="bergen, Norway" />
+            <i className="icon fas fa-map-marked-alt"></i>
+          </div>
           <SearchBar />
         </div>
-        <a href="#home"><div id="home" className="arrow"></div></a>
+        <a href="#home">
+          <div id="home" className="arrow"></div>
+        </a>
       </div>
       <Container className="home">
         <div className="home__text">
@@ -26,7 +28,7 @@ export default function Home() {
           </p>
         </div>
         <Images />
-        <a href="/accommodations" className="home__button">
+        <a href="accommodations" className="home__button">
           View all accommodations
           <i className="fas fa-chevron-right home__button__icon"></i>
         </a>

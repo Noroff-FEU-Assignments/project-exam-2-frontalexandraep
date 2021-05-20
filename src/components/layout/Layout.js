@@ -15,6 +15,10 @@ import Entries from "../admin/pages/entries/Entries";
 import AddPage from "../admin/pages/addEstablishment/AddPage";
 
 export default function Layout() {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <AuthProvider>
       <HelmetProvider>
