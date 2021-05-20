@@ -55,7 +55,7 @@
 
     .form-control-file {
       color: $colour-ui-shadow;
-      width: fit-content;
+      max-width: fit-content;
     }
 
     .checkbox-text {

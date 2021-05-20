@@ -160,19 +160,19 @@
 @media only screen and (max-width: $mobile-width) {
   .hero-banner__content h2,
   .home__button {
-    font-size: 1.25em;
+    font-size: 1.75em;
   }
 
   .hero-banner__content {
-    min-width: 250px;
+    min-width: 290px;
 
     .search-bar {
       input {
-        min-width: 250px;
+        min-width: 290px;
       }
 
       &__results__list {
-        min-width: 250px;
+        min-width: 290px;
 
         &__item {
           img {
@@ -202,6 +202,7 @@
 
     &__button {
       margin-top: 1.5em;
+      font-size: 1.45em;
     }
   }
 
@@ -222,19 +223,19 @@
 @media only screen and (min-width: $mobile-width) and (max-width: $tablet-width) {
   .hero-banner__content h2,
   .home__button {
-    font-size: 1.75em;
+    font-size: 1.9em;
   }
 
   .hero-banner__content {
-    width: 300px;
+    width: 310px;
 
     .search-bar {
       input {
-        width: 300px;
+        width: 310px;
       }
 
       &__results__list {
-        width: 300px;
+        width: 310px;
 
         &__item {
           img {
@@ -275,19 +276,19 @@
 @media only screen and (min-width: $desktop-width) {
   .hero-banner__content h2,
   .home__button {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 
   .hero-banner__content {
-    width: 310px;
+    width: 320px;
 
     .search-bar {
       input {
-        width: 310px;
+        width: 320px;
       }
 
       &__results__list {
-        width: 310px;
+        width: 320px;
 
         &__item {
           img {
