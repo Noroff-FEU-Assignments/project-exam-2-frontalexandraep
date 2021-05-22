@@ -86,7 +86,7 @@
 /* Media Queries */
 @media only screen and (max-width: $small-tablet-width) {
   .banner__accommodations {
-    height: 45vh;
+    height: 18vh;
   }
 
   .accommodations__results {
@@ -131,7 +131,7 @@
 
 @media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
   .banner__accommodations {
-    height: 50vh;
+    height: 25vh;
   }
 
   .accommodations__results {
@@ -177,7 +177,7 @@
 
 @media only screen and (min-width: $desktop-width) {
   .banner__accommodations {
-    height: 65vh;
+    height: 30vh;
   }
 
   .accommodations__results {

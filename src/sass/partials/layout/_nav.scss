@@ -2,10 +2,6 @@
 .navbar {
   background-color: $colour-background;
 
-  &__logo {
-    width: 7em;
-  }
-
   .navbar-nav .nav-link {
     color: $colour-ui-primary;
     font-weight: 300;
@@ -51,12 +47,20 @@
     .nav-link {
       margin: 0.7em 0 0.7em 0;
     }
+
+    &__logo {
+      width: 5.85em;
+    }
   }
 }
 
 @media only screen and (min-width: $small-tablet-width) and (max-width: $tablet-width) {
   .navbar {
     padding: 0.5em 5em;
+
+    &__logo {
+      width: 6.25em;
+    }
   }
 }
 
@@ -66,6 +70,10 @@
 
     .nav-link {
       margin-left: 1.5em;
+    }
+
+    &__logo {
+      width: 7em;
     }
   }
 
