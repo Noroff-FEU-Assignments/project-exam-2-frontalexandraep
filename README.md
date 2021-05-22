@@ -1,5 +1,13 @@
 # Alexandra Eline Pettersen
-## Project Exam 2 | May 2021
+## Project Exam 2 | 23 May 2021
+
+Admin user
+Username: noroff-student
+Password: Password123
+
+Deployed with Vercel
+https://holidaze-norway.vercel.app/
+
 
 # Create React App - CRA
 
@@ -8,6 +16,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+
+Installs all necessary packages
+
 
 ### `npm start`
 
