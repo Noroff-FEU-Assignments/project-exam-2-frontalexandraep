@@ -3,7 +3,7 @@
 
 Admin user\
 Username: noroff-student\
-Password: Password123\
+Password: Password123
 
 Deployed with Vercel\
 https://holidaze-norway.vercel.app/
