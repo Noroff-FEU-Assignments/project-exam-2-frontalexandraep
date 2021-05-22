@@ -1,11 +1,11 @@
 # Alexandra Eline Pettersen
 ## Project Exam 2 | 23 May 2021
 
-Admin user
-Username: noroff-student
-Password: Password123
+Admin user\
+Username: noroff-student\
+Password: Password123\
 
-Deployed with Vercel
+Deployed with Vercel\
 https://holidaze-norway.vercel.app/
 
 
